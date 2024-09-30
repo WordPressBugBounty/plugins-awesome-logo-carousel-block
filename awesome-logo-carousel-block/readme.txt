@@ -2,8 +2,8 @@
 Contributors: Binsaifullah
 Tags: logo carousel, logo slider, image carousel, carousel block, slider block
 Requires at least: 6.0
-Tested up to: 6.5.3
-Stable tag: 2.0.5
+Tested up to: 6.6.2
+Stable tag: 2.0.6
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html

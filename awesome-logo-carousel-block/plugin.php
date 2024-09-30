@@ -4,7 +4,7 @@
  * Description:       <strong>Awesome Logo Carousel Block</strong> is a Custom <strong>Gutenberg Block</strong> developed with Swiper Js library and Gutenberg Native Components to showcase clients logos in a sliding mode.
  * Requires at least: 6.0
  * Requires PHP:      7.0
- * Version:           2.0.5
+ * Version:           2.0.6
  * Author:            Zakaria Binsaifullah
  * Author URI:        https://makegutenblock.com
  * License:           GPL-2.0-or-later
@@ -67,7 +67,7 @@ final class ALCB_BLOCKS_CLASS {
 	 * Define the plugin constants
 	 */
 	private function alcb_define_constants() {
-		define( 'ALCB_VERSION', '2.0.5' );
+		define( 'ALCB_VERSION', '2.0.6' );
 		define( 'ALCB_URL', plugin_dir_url( __FILE__ ) );
 		define( 'ALCB_INC_URL', ALCB_URL . 'inc/' );		
 		define( 'ALCB_LIB_URL', ALCB_URL . 'lib/' );		
