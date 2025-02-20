@@ -1,23 +1,19 @@
 <?php
 /**
- * Plugin Name:       Awesome Logo Carousel Block
- * Description:       <strong>Awesome Logo Carousel Block</strong> is a Custom <strong>Gutenberg Block</strong> developed with Swiper Js library and Gutenberg Native Components to showcase clients logos in a sliding mode.
+ * Plugin Name:       Awesome Logo Carousel Blocks
+ * Plugin URI:        https://logocarousel.gutenbergkits.com
+ * Description:       Showcase brand logos in interactive grid, carousel, slider, ticker, and list view.
  * Requires at least: 6.0
  * Requires PHP:      7.0
- * Version:           2.0.7
- * Author:            Zakaria Binsaifullah
- * Author URI:        https://makegutenblock.com
+ * Version:           2.1.0
+ * Author:            Gutenbergkits Team
+ * Author URI:        https://gutenbergkits.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       awesome-logo-carousel-block
+ * Text Domain:       awesome-logo-carousel-blocks
+ * Domain Path:       /languages
  *
- * @package           @wordpress/create-block 
  */
-
- /**
-  * @package Zero Configuration with @wordpress/create-block
-  *  [alcb] && [ALCB] ===> Prefix
-  */
 
 // Stop Direct Access 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,108 +21,104 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // admin panel file
-require_once plugin_dir_path( __FILE__ ) . 'admin/admin.php';
+// require_once plugin_dir_path( __FILE__ ) . 'admin/admin.php';
 
 /**
  * Blocks Final Class
  */
+if( ! class_exists ( 'Alcb_Logo_Carousel' ) ) {
 
-final class ALCB_BLOCKS_CLASS {
-	public function __construct() {
+	final class Alcb_Logo_Carousel {
 
-		// define constants
-		$this->alcb_define_constants();
+		// version 
+		const VERSION = '2.1.0';
+		
+		// instance 
+		private static $instance = null;
 
-		// block initialization
-		add_action( 'init', [ $this, 'alcb_blocks_init' ] );
+		// constructor
+		public function __construct() {
+			$this->constants();
+			$this->includes();
 
-		// blocks category
-		if( version_compare( $GLOBALS['wp_version'], '5.7', '<' ) ) {
-			add_filter( 'block_categories', [ $this, 'alcb_register_block_category' ], 10, 2 );
-		} else {
-			add_filter( 'block_categories_all', [ $this, 'alcb_register_block_category' ], 10, 2 );
+			// enable redirect
+			register_activation_hook( __FILE__, [ $this, 'redirect_to_admin' ] );
+			// handle redirect
+			add_action( 'admin_init', [ $this, 'handle_redirection' ] );
 		}
 
-		// enqueue block assets
-		add_action( 'enqueue_block_assets', [ $this, 'alcb_external_libraries' ] );
-	}
+		/**
+		 * Define Constants
+		 * 
+		 * @return void
+		 */
+		public function constants() {
+			$constants = [
+				'ALCB_VERSION' => self::VERSION,
+				'ALCB_FILE'    => __FILE__,
+				'ALCB_URL'     => plugin_dir_url( __FILE__ ),
+				'ALCB_PATH'    => plugin_dir_path( __FILE__ ),
+				'ALCB_INC'     => plugin_dir_path( __FILE__ ) . 'inc/',
+			];
 
-	/**
-	 * Initialize the plugin
-	 */
-
-	public static function init(){
-		static $instance = false; 
-		if( ! $instance ) {
-			$instance = new self();
-		}
-		return $instance;
-	}
-
-	/**
-	 * Define the plugin constants
-	 */
-	private function alcb_define_constants() {
-		define( 'ALCB_VERSION', '2.0.7' );
-		define( 'ALCB_URL', plugin_dir_url( __FILE__ ) );
-		define( 'ALCB_INC_URL', ALCB_URL . 'inc/' );		
-		define( 'ALCB_LIB_URL', ALCB_URL . 'lib/' );		
-	}
-
-	/**
-	 * Blocks Registration 
-	 */
-
-	public function alcb_register_block( $name, $options = array() ) {
-		register_block_type( __DIR__ . '/build/' . $name, $options );
-	 }
-
-	/**
-	 * Blocks Initialization
-	*/
-	public function alcb_blocks_init() {
-		// register single block
-		$this->alcb_register_block( 'carousel' );
-	}
-
-	/**
-	 * Register Block Category
-	 */
-
-	public function alcb_register_block_category( $categories, $post ) {
-		return array_merge(
-			array(
-				array(
-					'slug'  => 'logo-blocks',
-					'title' => __( 'Logo Blocks', 'awesome-logo-carousel-block' ),
-				),
-			),
-			$categories,
-		);
-	}
-
-	/**
-	 * Enqueue Block Assets
-	 */
-	public function alcb_external_libraries() {
-		// admin css
-		if( is_admin() ) {
-			wp_enqueue_style( 'alcb-admin-editor', ALCB_URL . 'admin/css/editor.css' );
+			foreach ( $constants as $key => $value ) {
+				if ( ! defined( $key ) ) {
+					define( $key, $value );
+				}
+			}
 		}
 
-		if( ! is_admin() ){
-			// enqueue css
-			wp_enqueue_style( 'alcb-swiper-css', ALCB_LIB_URL . 'css/swiper-bundle.css', array(), '8.1.4', 'all' );
-			// enqueue JS
-			wp_enqueue_script( 'alcb-swiper-js', ALCB_LIB_URL . 'js/swiper-bundle.js', array(), '8.1.4', true );
-			wp_enqueue_script( 'alcb-logo-slider', ALCB_INC_URL . 'js/logo-slider.js', array(), ALCB_VERSION, true );
+		/**
+		 * Includes
+		 * 
+		 * @return void
+		 */
+		public function includes() {
+			require_once ALCB_INC . 'instance.php';
+			require_once ALCB_INC . 'init.php';
+			require_once ALCB_PATH . 'admin/admin.php';
 		}
+
+		/**
+		 * Instance 
+		 * 
+		 * @return Alcb_Logo_Carousel
+		 */
+		public static function instance() {
+			if ( is_null( self::$instance ) ) {
+				self::$instance = new self();
+			}
+			return self::$instance;
+		}
+
+				/**
+		 * Redirect to admin page after activation
+		 */
+		public function redirect_to_admin() {
+			set_transient( '_alcb_redirect', true, 30 );
+		}
+
+		/**
+		 * Handle Redirection
+		 */
+		public function handle_redirection() {
+			if ( get_transient( '_alcb_redirect' ) ) {
+				delete_transient( '_alcb_redirect' );
+				if ( is_admin() && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) && ! ( defined( 'DOING_CRON' ) && DOING_CRON ) ) {
+					wp_safe_redirect( admin_url( 'options-general.php?page=aclb-carousel' ) );
+					exit;
+				}
+			}
+		}
+
 	}
+
+	// initialize the plugin
+	function alcb_logo_carousel() {
+		return Alcb_Logo_Carousel::instance();
+	}
+
+	// kick-off
+	alcb_logo_carousel();
 
 }
-
-/**
- * Kickoff
-*/
-
-ALCB_BLOCKS_CLASS::init();

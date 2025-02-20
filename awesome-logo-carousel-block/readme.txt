@@ -1,18 +1,20 @@
 === Logo Carousel Gutenberg Block ===
-Contributors: Binsaifullah
+Contributors: gkits, Binsaifullah
 Tags: logo carousel, logo slider, image carousel, carousel block, slider block
 Requires at least: 6.0
 Tested up to: 6.7.2
-Stable tag: 2.0.7
-Requires PHP: 7.0
+Stable tag: 2.1.0
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Logo Carousel Block is a custom Gutenberg Block developed with Swiper Js library to showcase your clients' logos in a sliding manner.
+Logo Carousel Block allows you to create interactive client logos carousel with Gutenberg Block Editor.
 
 == Description ==
 
-**Awesome Logo Carousel Block** is a **Custom Gutenberg Block** developed with ***Swiper Js*** library to showcase your clients' logos in a sliding manner. It is easy to use and highly customizable with **Gutenberg Block Editor**.
+Logo Carousel Block - Create a beautiful logo carousel slider with the Gutenberg block editor. Logo Carousel Block allows you to create interactive client logos carousel with Gutenberg Block Editor. It is a highly customizable block that allows you to showcase clients' logos in a sliding manner.
+
+[Demo](https:/logocarousel.gutenbergkits.com/) | [Get Pro](https:/logocarousel.gutenbergkits.com/pricing)
 
 #### Video Tutorial ( How to Use the block )
 [youtube https://youtu.be/YteoGr18R_Y]
@@ -21,7 +23,8 @@ Logo Carousel Block is a custom Gutenberg Block developed with Swiper Js library
 - Showcase Clients' Logos in a sliding manner.
 - Slick, light-weight, and optimized.
 - Clean Codes
-- Highly Customizable
+- Customizable
+- **Logo Link** 
 - Logo Styling
 - All Carousel Features
 - Logo Hover Effects
@@ -40,19 +43,45 @@ This section describes how to install the plugin and get it working.
 e.g.
 
 1. Upload the plugin files to the `/wp-content/plugins/awesome-logo-carousel-block` directory, or install the plugin through the WordPress plugins screen directly.
-
 2. Activate the plugin through the 'Plugins' screen in WordPress
-
 3. Go to any post/page, and you will find a new category named LOGO CAROUSEL BLOCK that includes the block.
-
 4. Now simply use it.
 
 == Frequently Asked Questions ==
 
-= Is it responsive? =
+= Is the Logo Carousel Block responsive? =
+Yes, the block is 100% responsive and mobile-friendly.
 
-Sure, the block is 100% responsive.
+= Can I add links to the logos? =
+Yes, you can add custom links to each logo.
 
-= Is it customizable like Gutenberg Default Blocks? =
+= Does it support logo captions? =
+Yes, you can showcase logo captions with various styling options.
 
-Sure. It is highly customizable like Gutenberg default blocks.
+= Can I customize the carousel settings? =
+Absolutely! The block includes all essential carousel features, such as autoplay, speed, loop, and navigation controls.
+
+= Will this plugin slow down my website? =
+No, the Logo Carousel Block is lightweight and optimized for performance.
+
+= Do I need any additional plugins to use this block? =
+No, the block works natively with the Gutenberg editor without requiring any third-party block builder.
+
+= Is coding knowledge required to use this plugin? =
+Not at all! It is beginner-friendly and fully customizable within the Gutenberg block editor.
+
+= Does it work with any WordPress theme? =
+Yes, the block is designed to work with all WordPress themes that support Gutenberg.
+
+= Can I use this block in multiple places on my website? =
+Yes, you can use the Logo Carousel Block in multiple posts, pages, or site sections as needed.
+
+= Is there a pro version available? =
+Yes! The pro version includes additional features and customization options. You can check it out here.
+
+== Changelog ==
+= 2.1.0 =
+* Added: Logo link option
+* Added: Padding and background for logo 
+* Improved: Code quality, UI 
+* Fixed: Minor bugs

@@ -3,7 +3,14 @@
  * Admin Support Page
 */
 
-class ACLB_Admin_Page {
+namespace AwesomeLogoCarouselBlocks\Admin;
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+class Alcb_Admin_Page {
     /**
      * Contructor 
     */
@@ -14,26 +21,22 @@ class ACLB_Admin_Page {
 
     // Admin Assets
     public function aclb_admin_page_assets($screen) {
-        if( 'tools_page_aclb-carousel' == $screen ) {
+        if( 'settings_page_aclb-carousel' == $screen ) {
             wp_enqueue_style( 'admin-asset', plugins_url('css/admin-page.css', __FILE__ ) );
         }
     }
 
     // Admin Page
     public function aclb_plugin_admin_page(){
-        add_submenu_page( 'tools.php', __('Logo Carousel Block','awesome-logo-carousel-block'), __('Logo Carousel Block','awesome-logo-carousel-block'), 'manage_options', 'aclb-carousel', [ $this, 'aclb_admin_page_content_callback' ] );
+        add_submenu_page( 'options-general.php', __('Logo Carousel Block','awesome-logo-carousel-blocks'), __('Logo Carousel Block','awesome-logo-carousel-blocks'), 'manage_options', 'aclb-carousel', [ $this, 'aclb_admin_page_content_callback' ] );
     }
     public function aclb_admin_page_content_callback(){
         ?>
             <div class="admin_page_container">
                 <div class="plugin_head">
                     <div class="head_container">
-                        <h1 class="plugin_title"><?php echo esc_html__('Logo Carousel Block','awesome-logo-carousel-block'); ?></h1>
-                        <h4 class="plugin_subtitle"><?php echo esc_html__('A Custom Gutenberg Block to Create an excellent clients Logo Carousel in your Gutenberg Editor', 'awesome-logo-carousel-block'); ?></h4>
-                        <div class="support_btn">
-                            <a href="https://makegutenblock.com/contact" target="_blank" style="background: #D37F00"><?php echo esc_html__('Contact Me','awesome-logo-carousel-block'); ?></a>
-                            <a href="https://wordpress.org/plugins/awesome-logo-carousel-block/#reviews" target="_blank" style="background: #0174A2"><?php echo esc_html__('Rate Plugin','awesome-logo-carousel-block'); ?></a>
-                        </div>
+                        <h1 class="plugin_title"><?php echo esc_html__('Logo Carousel Block','awesome-logo-carousel-blocks'); ?></h1>
+                        <h4 class="plugin_subtitle"><?php echo esc_html__('A Custom Gutenberg Block to Create an excellent clients Logo Carousel in your Gutenberg Editor', 'awesome-logo-carousel-blocks'); ?></h4>
                     </div>
                 </div>
                 <div class="plugin_body">
@@ -43,19 +46,21 @@ class ACLB_Admin_Page {
                         </div>
                     </div>
                     <div class="support_area">
-                        <div class="single_support">
-                            <h4 class="support_title"> <?php echo esc_html__('Freelance Work','awesome-logo-carousel-block'); ?></h4>
+                        <div class="single_support pro_support">
+                            <h4 class="title"> <?php echo esc_html__('Unlock Pro Features','awesome-logo-carousel-blocks'); ?></h4>
+                            <p class="description">
+                                <?php echo esc_html__('Unlock more features and get premium support by upgrading to Pro version.','awesome-logo-carousel-blocks'); ?>
+                            </p>
                             <div class="support_btn">
-                                <a href="https://www.fiverr.com/users/devs_zak/" target="_blank" style="background: #1DBF73"><?php echo esc_html__('Fiverr','awesome-logo-carousel-block'); ?></a>
-                                <a href="https://www.upwork.com/freelancers/~010af183b3205dc627" target="_blank" style="background: #14A800"><?php echo esc_html__('UpWork','awesome-logo-carousel-block'); ?></a>
+                                <a href="https://logocarousel.gutenbergkits.com" class="pro-btn">
+                                    <?php echo esc_html__('Upgrade to Pro','awesome-logo-carousel-blocks'); ?>
+                                </a>
                             </div>
                         </div>
                         <div class="single_support">
-                            <h4 class="support_title"><?php echo esc_html__('Get Support','awesome-logo-carousel-block'); ?></h4>
+                            <h4 class="title"><?php echo esc_html__('Get Support','awesome-logo-carousel-blocks'); ?></h4>
                             <div class="support_btn">
-                                <a href="https://makegutenblock.com/contact" target="_blank" style="background: #002B42"><?php echo esc_html__('Contact','awesome-logo-carousel-block'); ?></a>
-                                <a href="mailto:zbinsaifullah@gmail.com" style="background: #EA4335">
-                                <?php echo esc_html__('Send Mail','awesome-logo-carousel-block'); ?></a>
+                                <a href="https://support.gutenbergkits.com" target="_blank"><?php echo esc_html__('Contact','awesome-logo-carousel-blocks'); ?></a>
                             </div>
                         </div>
                     </div>
@@ -64,4 +69,5 @@ class ACLB_Admin_Page {
         <?php 
     }
 }
- new ACLB_Admin_Page();
+
+new Alcb_Admin_Page();
