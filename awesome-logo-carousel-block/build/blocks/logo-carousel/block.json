@@ -6,7 +6,11 @@
   "category": "logo-blocks",
   "description": "Shows clients logos in a carousel",
   "supports": {
-    "html": false
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
   },
   "keywords": [
     "logo",
@@ -17,11 +21,13 @@
   "textdomain": "awesome-logo-carousel-blocks",
   "editorScript": [
     "file:./index.js",
-    "alcb-swiper"
+    "alcb-swiper",
+    "alcb-global"
   ],
   "editorStyle": [
     "file:./index.css",
-    "alcb-swiper"
+    "alcb-swiper",
+    "alcb-global-style"
   ],
   "style": [
     "file:./style-index.css",

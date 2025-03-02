@@ -39,9 +39,13 @@ class Alcb_Enqueue {
      * @return void
      */
     public function enqueue_block_editor_assets() {
+
         // modules 
         if ( file_exists( trailingslashit( ALCB_PATH ) . 'build/modules/index.asset.php' ) ) {
             $md_file = require_once trailingslashit( ALCB_PATH ) . 'build/modules/index.asset.php';
+            if( ! is_array( $md_file ) ) {
+                return;
+            }
             wp_enqueue_script(
                 'alcb-modules',
                 ALCB_URL . 'build/modules/index.js',
@@ -49,25 +53,28 @@ class Alcb_Enqueue {
                 $md_file['version'],
                 false
             );
+            
         }
 
         // gloabl 
        if( file_exists( ALCB_PATH . 'build/global/index.asset.php' ) ) {
             $gd_file = require_once ALCB_PATH . 'build/global/index.asset.php';
-            wp_enqueue_script(
-                'alcb-global',
-                ALCB_URL . 'build/global/index.js',
-                $gd_file['dependencies'],
-                $gd_file['version'],
-                false
-            );
-            wp_enqueue_style(
-                'alc-global',
-                ALCB_URL . 'build/global/index.css',
-                [],
-                $gd_file['version'],
-                'all'
-            );
+            if ( is_array( $gd_file ) ) {
+                wp_register_script(
+                    'alcb-global',
+                    ALCB_URL . 'build/global/index.js',
+                    $gd_file['dependencies'],
+                    $gd_file['version'],
+                    false
+                );
+                wp_register_style(
+                    'alcb-global-style',
+                    ALCB_URL . 'build/global/index.css',
+                    [],
+                    $gd_file['version'],
+                    'all'
+                );
+            }
         }
     }
 
