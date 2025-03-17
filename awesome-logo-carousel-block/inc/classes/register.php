@@ -31,7 +31,7 @@ if( ! class_exists( 'Alcb_Register_Blocks' ) ) {
          * @return void
          */
         public function register_block() {
-            $blocks = ['logo-carousel'];
+            $blocks = ['logo-carousel','logo','grid-logo'];
            
 
             if ( ! empty( $blocks ) and is_array( $blocks ) ) {

@@ -17,6 +17,7 @@ class Alcb_Admin_Page {
     public function __construct(){
         add_action( 'admin_menu', [ $this, 'aclb_plugin_admin_page' ] );
         add_action( 'admin_enqueue_scripts', [ $this, 'aclb_admin_page_assets' ] );
+        add_action( 'admin_init', [ $this, 'awesome_logo_carousel_block_dci_plugin' ] );
     }
 
     // Admin Assets
@@ -68,6 +69,39 @@ class Alcb_Admin_Page {
             </div>
         <?php 
     }
+
+
+    /**
+     * SDK Integration
+     */
+    public function awesome_logo_carousel_block_dci_plugin() {
+        // Include DCI SDK.
+        require_once ALCB_PATH . 'admin/dci/start.php';
+        wp_register_style('dci-sdk-awesome-logo-carousel-block', ALCB_URL . 'admin/dci/assets/css/dci.css', array(), '1.2.1', 'all');
+        wp_enqueue_style('dci-sdk-awesome-logo-carousel-block');
+
+        dci_dynamic_init( array(
+          'sdk_version'   => '1.2.1',
+          'product_id'    => 9,
+          'plugin_name'   => 'Logo Carousel', // make simple, must not empty
+          'plugin_title'  => 'Love using Logo Carousel? Congrats 🎉  ( Never miss an Important Update )', // You can describe your plugin title here
+          'api_endpoint'  => 'https://dashboard.codedivo.com/wp-json/dci/v1/data-insights',
+          'slug'          => 'awesome-logo-carousel-block', // folder-name or write 'no-need' if you don't want to use
+          'core_file'     => false,
+          'plugin_deactivate_id' => false,
+          'menu'          => array(
+            'slug' => 'aclb-carousel',
+          ),
+          'public_key'    => 'pk_Ds7qp5gH1LRkcaEGJlRr1VJ8l9DkL7IH',
+          'is_premium'    => false,
+          'popup_notice'  => false,
+          'deactivate_feedback' => false,
+          'text_domain'  => 'awesome-logo-carousel-block',
+          'plugin_msg'   => '<p>Be Top-contributor by sharing non-sensitive plugin data and create an impact to the global WordPress community today! You can receive valuable emails periodically.</p>',
+        ) );
+
+      }
+              
 }
 
 new Alcb_Admin_Page();

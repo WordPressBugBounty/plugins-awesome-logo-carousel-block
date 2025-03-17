@@ -2,7 +2,7 @@
   "apiVersion": 3,
   "name": "lcb/logo-carousel",
   "version": "0.1.0",
-  "title": "Logo Carousel",
+  "title": "Carousel",
   "category": "logo-blocks",
   "description": "Shows clients logos in a carousel",
   "supports": {
