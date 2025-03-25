@@ -31,14 +31,15 @@ if( ! class_exists( 'Alcb_Register_Blocks' ) ) {
          * @return void
          */
         public function register_block() {
-            $blocks = ['logo-carousel','logo','grid-logo'];
-           
-
-            if ( ! empty( $blocks ) and is_array( $blocks ) ) {
-				foreach ( $blocks as $block ) {
-					register_block_type( trailingslashit( ALCB_PATH ) . '/build/blocks/' . $block );
-				}
-			}
+            $blocks = ['logo-carousel', 'logo', 'grid-logo'];
+            if ( ! empty( $blocks ) && is_array( $blocks ) ) {
+                foreach ( $blocks as $block ) {
+                    $block_path = trailingslashit( ALCB_PATH ) . '/build/blocks/' . $block;
+                    if ( file_exists( $block_path ) ) {
+                        register_block_type( $block_path );
+                    }
+                }
+            }
         }
     }
 

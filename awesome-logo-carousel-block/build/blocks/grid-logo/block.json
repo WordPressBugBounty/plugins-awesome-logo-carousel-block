@@ -16,7 +16,8 @@
     "lcb/logoHoverStyle": "logoHoverStyle",
     "lcb/hoverOverlay": "hoverOverlay",
     "lcb/hoverEffect": "hoverEffect",
-    "lcb/contentPosition": "contentPosition"
+    "lcb/contentPosition": "contentPosition",
+    "lcb/visibleContentPosition": "visibleContentPosition"
   },
   "keywords": [
     "logo",

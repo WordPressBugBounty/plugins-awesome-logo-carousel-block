@@ -22,7 +22,8 @@
     "lcb/logoHoverStyle",
     "lcb/hoverOverlay",
     "lcb/hoverEffect",
-    "lcb/contentPosition"
+    "lcb/contentPosition",
+    "lcb/visibleContentPosition"
   ],
   "keywords": [
     "logo",
