@@ -3,7 +3,7 @@ Contributors: gkits, Binsaifullah
 Tags: logo carousel, logo slider, image carousel, carousel block, slider block
 Requires at least: 6.0
 Tested up to: 6.7
-Stable tag: 2.1.6
+Stable tag: 2.1.7
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -80,6 +80,10 @@ Yes, you can use the Logo Carousel Block in multiple posts, pages, or site secti
 Yes! The pro version includes additional features and customization options. You can check it out here.
 
 == Changelog ==
+= 2.1.7 =
+* Fixed: Dynamic style security issue 
+* Info: Some pro features are introduced
+
 = 2.1.6 =
 * Fixed: Logo Grid Layout issue 
 

@@ -38,7 +38,7 @@ if( ! class_exists( 'Alcb_Style' ) ) {
                 }
             
                 // Get the unique ID safely.
-                $unique_id = $attrs['sliderId'] ?? '';
+                $unique_id = isset( $attrs['sliderId'] ) ? sanitize_key( $attrs['sliderId'] ) : '';
                 if ( empty( $unique_id ) ) {
                     return $block_content;
                 }
@@ -77,14 +77,13 @@ if( ! class_exists( 'Alcb_Style' ) ) {
                 return $block_content;
             }
 
-            // Get the unique ID safely.
-            $unique_id = $attrs['sliderId'] ?? '';
+            // Get the unique ID safely and properly escape it
+            $unique_id = isset( $attrs['sliderId'] ) ? esc_attr( $attrs['sliderId'] ) : '';
             if ( empty( $unique_id ) ) {
                 return $block_content;
             }
-
+            
             $block_content = str_replace( 'wp-block-lcb-logo-carousel', 'wp-block-lcb-logo-carousel ' . $unique_id, $block_content );
-
             return $block_content;
             
         }
