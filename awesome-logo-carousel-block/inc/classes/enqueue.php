@@ -76,6 +76,11 @@ class Alcb_Enqueue {
                 );
             }
         }
+
+        // localize script 
+        wp_localize_script( 'alcb-global', 'alcbData', [
+            'hasPro' => class_exists('Alcb_Logo_Carousel_Pro')
+        ] );
     }
 
     /**
