@@ -3,7 +3,7 @@ Contributors: gkits, Binsaifullah
 Tags: logo carousel, logo slider, image carousel, carousel block, slider block
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 2.1.8
+Stable tag: 2.1.9
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -17,7 +17,7 @@ Logo Carousel Block - Create a beautiful logo carousel slider with the Gutenberg
 [Demo](https:/logocarousel.gutenbergkits.com/) | [Get Pro](https:/logocarousel.gutenbergkits.com/pricing)
 
 #### Video Tutorial ( How to Use the block )
-[youtube https://youtu.be/YteoGr18R_Y]
+[youtube https://youtu.be/SXGosLhHadU]
 
 ### Features Included:-
 - Showcase Clients' Logos in a sliding manner.

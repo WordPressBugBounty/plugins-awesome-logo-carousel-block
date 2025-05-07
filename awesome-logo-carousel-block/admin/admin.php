@@ -104,7 +104,7 @@ class Alcb_Admin_Page {
                                 </div>
                                 <div class="lc-hero-video">
                                     <div class="lc-video-container">
-                                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/YteoGr18R_Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/SXGosLhHadU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                 </div>
                             </section>
