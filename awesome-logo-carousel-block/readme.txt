@@ -3,7 +3,7 @@ Contributors: gkits, Binsaifullah
 Tags: logo carousel, logo slider, image carousel, carousel block, slider block
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 2.1.9
+Stable tag: 2.1.10
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -14,7 +14,7 @@ Logo Carousel Block allows you to create interactive client logos carousel with 
 
 Logo Carousel Block - Create a beautiful logo carousel slider with the Gutenberg block editor. Logo Carousel Block allows you to create interactive client logos carousel with Gutenberg Block Editor. It is a highly customizable block that allows you to showcase clients' logos in a sliding manner.
 
-[Demo](https:/logocarousel.gutenbergkits.com/) | [Get Pro](https:/logocarousel.gutenbergkits.com/pricing)
+[Demo](https://logocarousel.gutenbergkits.com/) | [Get Pro](https://logocarousel.gutenbergkits.com/pricing)
 
 #### Video Tutorial ( How to Use the block )
 [youtube https://youtu.be/SXGosLhHadU]
@@ -88,6 +88,13 @@ Yes, you can use the Logo Carousel Block in multiple posts, pages, or site secti
 Yes! The pro version includes additional features and customization options. You can check it out here.
 
 == Changelog ==
+
+= 2.1.10 =
+* Fixed: Grid Layout overlay issue
+
+= 2.1.9 =
+* Fixed: Logo caption issue
+
 = 2.1.8 =
 * Info: Pro version is released with new features
 
