@@ -1,0 +1,69 @@
+.alcb-control-container {
+    &.typography-control {
+        .components-base-control,
+        .components-base-control__label {
+            margin: 0 !important;
+        }
+        .alcb-btn {
+            width: 30px;
+            height: 30px;
+            background: #eeeeee;
+            min-width: auto;
+            border-radius: 50%;
+            svg {
+                width: 15px;
+                fill: #2563eb;
+                stroke: #2563eb;
+            }
+        }
+    }
+}
+
+.alcb-typography-panel {
+    width: 300px;
+    padding: 15px;
+    box-sizing: border-box;
+
+    .alcb-units-wrapper {
+        display: flex;
+        gap: 5px;
+    }
+
+    .unit-btn {
+        border: none;
+        background: none;
+        padding: 0;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 500;
+    }
+
+    .alcb-controls-body {
+        margin-top: 8px;
+    }
+
+    .alcb-reset-button.range-btn {
+        transform: translateY(-2px);
+    }
+
+    .alcb-btn-group {
+        &.text-transform-btn-group {
+            .components-button {
+                text-transform: none !important;
+            }
+            .text-transform-btn {
+                svg {
+                    width: 18px;
+                }
+            }
+        }
+    }
+
+    .font-style-btn svg {
+        width: 18px;
+    }
+
+    .svgib__indicators {
+        display: none !important;
+    }
+}

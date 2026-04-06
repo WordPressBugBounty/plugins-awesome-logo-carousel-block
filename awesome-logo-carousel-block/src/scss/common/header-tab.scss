@@ -1,0 +1,192 @@
+/*
+* Editor CSS:
+*/
+.alcb-panels {
+    .components-toggle-control {
+        .components-flex {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .components-button-group .components-button {
+        height: 32px !important;
+    }
+
+    .components-base-control {
+        margin-bottom: 16px !important;
+    }
+
+    .components-flex.components-input-base.components-select-control {
+        .components-input-control__container {
+            width: 120px !important;
+            flex: none !important;
+        }
+    }
+
+    .components-range-control__thumb-wrapper {
+        top: 0 !important;
+    }
+    //  Header Tab CSS
+    .components-button-group {
+        display: flex;
+        .tab-button {
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;
+            box-shadow: none !important;
+            border-top: 1px solid #e0e0e0;
+            border-left: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            height: 65px;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 0 !important;
+            background: #f5f5f5;
+            flex-direction: column;
+            padding: 10px;
+            &.setting-tab {
+                border-right: 1px solid #e0e0e0;
+                border-left: 0;
+            }
+            &.active {
+                background: #fff;
+                color: #2563eb;
+                border-top-color: #2563eb;
+                border-top-width: 2px;
+            }
+            &:hover {
+                color: #2563eb;
+            }
+        }
+    }
+
+    // common css
+    .components-input-control__backdrop {
+        border: 1px solid #e0e0e0 !important;
+    }
+
+    // rangle control
+    .components-base-control__field {
+        margin-bottom: 0 !important;
+    }
+    .components-range-control__wrapper span[aria-hidden='true'] {
+        height: 2px !important;
+    }
+    .components-range-control__thumb-wrapper {
+        height: 8px !important;
+        width: 8px !important;
+        margin-top: 10px !important;
+
+        span:before {
+            height: 12px !important;
+            width: 12px !important;
+            left: -2px !important;
+            top: -5px !important;
+        }
+    }
+    .components-simple-tooltip {
+        display: none !important;
+    }
+
+    .components-range-control__track,
+    .components-range-control__thumb-wrapper {
+        background-color: #2563eb;
+    }
+
+    // text input control
+    .components-text-control__input {
+        border: 1px solid #e0e0e0 !important;
+        height: 36px !important;
+    }
+
+    // toggle control
+    .components-form-toggle .components-form-toggle__input:focus + .components-form-toggle__track {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    .components-form-toggle.is-checked .components-form-toggle__track {
+        background-color: #2563eb !important;
+    }
+
+    // textarea
+    textarea {
+        border: 1px solid #e0e0e0 !important;
+        resize: none !important;
+    }
+    .components-base-control__help {
+        font-style: italic !important;
+    }
+
+    .components-button.photo-comparison-add-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #2563eb;
+        width: 100%;
+        margin-bottom: 10px;
+        color: #fff;
+        &:active {
+            color: #fff;
+        }
+        svg path {
+            stroke: #fff;
+        }
+    }
+
+    .photo-comparison-upload-btn {
+        width: 100%;
+        height: 130px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #e0e0e0;
+        margin-bottom: 16px;
+        cursor: pointer;
+    }
+
+    // panel title
+    .components-panel__body.is-opened > .components-panel__body-title {
+        margin-bottom: 16px !important;
+    }
+
+    // select contrl
+    .components-select-control__input {
+        height: 32px !important;
+    }
+
+    label {
+        font-size: 13px !important;
+        text-transform: none !important;
+        font-weight: 400 !important;
+    }
+
+    // form input control
+    .components-form-token-field__input-container {
+        border: 1px solid #e0e0e0 !important;
+    }
+    .components-form-token-field__help,
+    .alcb-help-note {
+        font-style: italic !important;
+        color: #757575 !important;
+    }
+
+    .alcb-help-note {
+        margin-top: 8px !important;
+        font-size: 12px !important;
+    }
+
+    // custom css
+    .cm-scroller {
+        border: 1px solid #e0e0e0 !important;
+    }
+}
+
+.alcb-label {
+    font-size: 13px !important;
+    text-transform: capitalize !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+}

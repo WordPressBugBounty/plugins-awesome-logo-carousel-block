@@ -3,7 +3,7 @@
   "name": "lcb/grid-logo",
   "version": "0.1.0",
   "title": "Grid",
-  "category": "logo-blocks",
+  "category": "alcb-blocks",
   "description": "Shows clients logos in a carousel",
   "supports": {
     "html": false
@@ -25,7 +25,7 @@
     "logo carousel",
     "logo slider"
   ],
-  "textdomain": "awesome-logo-carousel-blocks",
+  "textdomain": "awesome-logo-carousel-block",
   "editorScript": [
     "file:./index.js",
     "alcb-global"

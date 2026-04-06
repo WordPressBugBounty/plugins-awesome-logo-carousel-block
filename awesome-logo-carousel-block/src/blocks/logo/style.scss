@@ -1,0 +1,147 @@
+.wp-block-lcb-logo {
+    .logo-wrapper {
+        overflow: hidden;
+        border: 1px solid #181616;
+        flex-direction: column;
+        position: relative;
+        box-sizing: border-box;
+        display: block;
+        &:hover {
+            .logo-content.cv_hover {
+                opacity: 1;
+                transform: translateY(0);
+                visibility: visible;
+
+                // animations
+                &.slide-down {
+                    transform: translateY(0);
+                }
+                &.slide-left {
+                    transform: translateX(0);
+                }
+                &.slide-right {
+                    transform: translateX(0);
+                }
+                &.scale {
+                    transform: scale(1);
+                }
+            }
+        }
+
+        // positions
+        &.flex {
+            display: flex;
+            // justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &.vc_left,
+        &.vc_right {
+            .logo-content {
+                width: 100%;
+            }
+        }
+
+        &.vc_top {
+            flex-direction: column-reverse;
+        }
+        &.vc_left {
+            flex-direction: row-reverse;
+        }
+        &.vc_right {
+            flex-direction: row;
+        }
+    }
+
+    .logo-content {
+        text-align: center;
+
+        &.overlay {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &.cv_hover {
+            padding: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            color: #fff;
+            font-size: 14px;
+            visibility: hidden;
+            transform: translateY(100%);
+            &.top {
+                top: 0;
+                bottom: auto;
+            }
+            &.overlay {
+                height: 100%;
+            }
+
+            // animations
+            &.slide-down {
+                transform: translateY(-100%);
+            }
+            &.slide-left {
+                transform: translateX(-100%);
+            }
+            &.slide-right {
+                transform: translateX(100%);
+            }
+            &.scale {
+                transform: scale(0);
+            }
+        }
+    }
+
+    .alcb__logo-caption {
+        font-size: 16px;
+    }
+    .alcb__logo-description {
+        font-size: 14px;
+    }
+
+    // logo hover effects
+    .logo-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        img {
+            max-width: 100%;
+            transition: 0.2s ease-in-out;
+        }
+        &.alcb__normal_to_gray {
+            &:hover {
+                img {
+                    filter: grayscale(100%);
+                }
+            }
+        }
+        &.alcb__zoom_in {
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        &.alcb__zoom_out {
+            img {
+                transform: scale(1.1);
+            }
+            &:hover {
+                img {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}

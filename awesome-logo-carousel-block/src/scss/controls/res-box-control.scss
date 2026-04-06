@@ -1,0 +1,90 @@
+.alcb-control-container {
+    .single-inputs-group {
+        display: flex;
+        align-items: flex-start;
+        .components-input-control__input {
+            height: 36px !important;
+            text-align: center !important;
+        }
+    }
+
+    .alcb-single-inputs-group {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 0;
+        .single-input {
+            width: 20%;
+            input[type='number'] {
+                width: 100%;
+                border: 1px solid #e0e0e0;
+                height: 36px;
+                padding: 0 2px 0 8px !important;
+                border-right: 0;
+                border-radius: 0 !important;
+                text-align: center;
+                &:focus {
+                    outline: none;
+                    box-shadow: 0 0 0 1px #2271b1 inset !important;
+                }
+                &::placeholder {
+                    color: #d8d8d8;
+                }
+            }
+
+            &.first-item {
+                input[type='number'] {
+                    border-radius: 2px 0 0 2px !important;
+                }
+            }
+
+            &:first-child .components-input-control {
+                border-right: 0 !important;
+            }
+
+            .components-flex {
+                align-items: center !important;
+            }
+
+            label.input-label {
+                font-size: 10px !important;
+                text-transform: capitalize !important;
+                color: #b3b3b3;
+                display: block;
+                margin-top: 2px;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            .components-input-control__input,
+            .components-button {
+                height: 36px;
+                text-align: center !important;
+            }
+
+            .components-button {
+                border: 1px solid #e0e0e0;
+                background: #ffffff;
+                padding: 6px;
+                align-items: center;
+                justify-content: center;
+                width: 100% !important;
+                border-radius: 0 2px 2px 0 !important;
+                &:focus {
+                    outline: none;
+                    box-shadow: none !important;
+                }
+                .dashicon {
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+                &.active {
+                    background: #eeeeee;
+                    .dashicon {
+                        color: #2563eb;
+                    }
+                }
+            }
+        }
+    }
+}

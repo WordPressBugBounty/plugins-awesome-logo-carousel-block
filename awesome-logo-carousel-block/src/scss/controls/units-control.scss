@@ -1,0 +1,44 @@
+.alcb-units-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    .unit-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+        opacity: 0.3;
+
+        &.alcb-active {
+            color: #2563eb;
+            opacity: 1;
+        }
+    }
+}
+
+.alcb-selected-unit {
+    border: none !important;
+    background: #eeeeee;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    text-transform: uppercase;
+    border-radius: 50%;
+    font-weight: 700;
+    color: #004365;
+    cursor: pointer;
+}
+
+.alcb-units-content-wrapper {
+    .components-popover__content {
+        margin-top: -5px !important;
+    }
+}

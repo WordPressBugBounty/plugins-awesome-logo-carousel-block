@@ -1,22 +1,22 @@
-# Copyright (C) 2025 Gutenbergkits Team
+# Copyright (C) 2026 Gutenbergkits Team
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Awesome Logo Carousel Blocks 2.1.0\n"
+"Project-Id-Version: Awesome Logo Carousel Block 2.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/awesome-logo-carousel-block\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-19T12:06:03+00:00\n"
+"POT-Creation-Date: 2026-03-16T10:38:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.10.0\n"
-"X-Domain: awesome-logo-carousel-blocks\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: awesome-logo-carousel-block\n"
 
 #. Plugin Name of the plugin
 #: plugin.php
-msgid "Awesome Logo Carousel Blocks"
+msgid "Awesome Logo Carousel Block"
 msgstr ""
 
 #. Plugin URI of the plugin
@@ -39,76 +39,437 @@ msgstr ""
 msgid "https://gutenbergkits.com"
 msgstr ""
 
-#: admin/admin.php:24
-#: admin/admin.php:31
+#: admin/admin.php:57
+#: admin/admin.php:58
 msgid "Logo Carousel Block"
 msgstr ""
 
-#: admin/admin.php:32
-msgid "A Custom Gutenberg Block to Create an excellent clients Logo Carousel in your Gutenberg Editor"
+#: admin/admin.php:86
+msgid "Welcome"
 msgstr ""
 
-#: admin/admin.php:34
-msgid "Contact Me"
+#: admin/admin.php:90
+msgid "License"
 msgstr ""
 
-#: admin/admin.php:35
-msgid "Rate Plugin"
+#: admin/admin.php:95
+msgid "Get Pro"
 msgstr ""
 
-#: admin/admin.php:47
-msgid "Freelance Work"
+#: admin/admin.php:124
+msgid "Welcome to Logo Carousel Block"
 msgstr ""
 
-#: admin/admin.php:49
-msgid "Fiverr"
+#: admin/admin.php:125
+msgid "A fast, fully customizable & beautiful WordPress block suitable for showcasing client logos, brand partners, and sponsors. It is very lightweight and offers unparalleled speed."
 msgstr ""
 
-#: admin/admin.php:50
-msgid "UpWork"
+#: admin/admin.php:131
+#: src/blocks/grid-logo/inspect.js:204
+#: src/blocks/logo-carousel/inspect.js:470
+#: src/blocks/logo/inspect.js:38
+msgid "Upgrade to Pro"
 msgstr ""
 
-#: admin/admin.php:54
+#: admin/admin.php:133
+msgid "Explore Demos"
+msgstr ""
+
+#: admin/admin.php:149
+msgid "Available Blocks"
+msgstr ""
+
+#: admin/admin.php:152
+msgid "Carousel"
+msgstr ""
+
+#: admin/admin.php:153
+msgid "showcase logos in carousel style with customization options."
+msgstr ""
+
+#: admin/admin.php:155
+#: admin/admin.php:162
+msgid "Freemium"
+msgstr ""
+
+#: admin/admin.php:159
+msgid "Grid & List"
+msgstr ""
+
+#: admin/admin.php:160
+msgid "showcase logos in grid and list style with customization options."
+msgstr ""
+
+#: admin/admin.php:166
+msgid "Stagger"
+msgstr ""
+
+#: admin/admin.php:167
+msgid "showcase logos in sliding mode with Stagger Effect."
+msgstr ""
+
+#: admin/admin.php:169
+#: admin/admin.php:176
+msgid "Premium"
+msgstr ""
+
+#: admin/admin.php:173
+msgid "Ticker-Marquee"
+msgstr ""
+
+#: admin/admin.php:174
+msgid "showcase logos in infinite ticker or marquee style."
+msgstr ""
+
+#: admin/admin.php:184
+msgid "Extend Your Website"
+msgstr ""
+
+#: admin/admin.php:189
+msgid "GutenLayouts"
+msgstr ""
+
+#: admin/admin.php:190
+msgid "Ultimate Gutenberg patterns and templates."
+msgstr ""
+
+#: admin/admin.php:193
+msgid "More"
+msgstr ""
+
+#: admin/admin.php:200
+msgid "GutSlider"
+msgstr ""
+
+#: admin/admin.php:201
+msgid "All in One Block Slider for Gutenberg Editor."
+msgstr ""
+
+#: admin/admin.php:204
+#: admin/admin.php:215
+msgid "Get it"
+msgstr ""
+
+#: admin/admin.php:211
+msgid "Easy Accordion Block"
+msgstr ""
+
+#: admin/admin.php:212
+msgid "Create stunning accordions and faqs in Gutenberg editor"
+msgstr ""
+
+#: admin/admin.php:222
+msgid "Google Map"
+msgstr ""
+
+#: admin/admin.php:223
+msgid "Embed Google Maps easily in Gutenberg editor."
+msgstr ""
+
+#: admin/admin.php:226
+msgid "Install"
+msgstr ""
+
+#: admin/admin.php:248
+msgid "Premium Support"
+msgstr ""
+
+#: admin/admin.php:249
+msgid "Get fast and reliable support from our expert team."
+msgstr ""
+
+#: admin/admin.php:250
 msgid "Get Support"
 msgstr ""
 
-#: admin/admin.php:56
+#: admin/admin.php:261
+msgid "Contact Us"
+msgstr ""
+
+#: admin/admin.php:262
+msgid "Have questions? Our team is ready to help you."
+msgstr ""
+
+#: admin/admin.php:263
 msgid "Contact"
 msgstr ""
 
-#: admin/admin.php:58
-msgid "Send Mail"
+#: admin/admin.php:273
+msgid "Rate Our Plugin"
 msgstr ""
 
-#: inc/init.php:50
+#: admin/admin.php:274
+msgid "Love Logo Carousel Block? Leave us a review."
+msgstr ""
+
+#: admin/admin.php:275
+msgid "Rate Plugin"
+msgstr ""
+
+#: inc/init.php:56
 msgid "Logo Blocks"
 msgstr ""
 
+#: plugin.php:114
+#: src/blocks/logo/inspect.js:15
+msgid "Link"
+msgstr ""
+
+#: plugin.php:117
+msgid "Custom link for this image"
+msgstr ""
+
+#: plugin.php:153
+msgid "Custom link for the image"
+msgstr ""
+
+#: src/blocks/grid-logo/constants/index.js:5
 #: src/blocks/logo-carousel/constants/index.js:5
 msgid "Always"
 msgstr ""
 
+#: src/blocks/grid-logo/constants/index.js:9
 #: src/blocks/logo-carousel/constants/index.js:9
 #: src/controls/border-control/index.js:233
 #: src/controls/switcher-control/index.js:15
 msgid "Hover"
 msgstr ""
 
+#: src/blocks/grid-logo/constants/index.js:15
+msgid "Auto"
+msgstr ""
+
+#: src/blocks/grid-logo/constants/index.js:19
+msgid "Overlay"
+msgstr ""
+
+#: src/blocks/grid-logo/constants/index.js:25
 #: src/blocks/logo-carousel/constants/index.js:16
 #: src/blocks/logo-carousel/constants/index.js:35
 msgid "None"
 msgstr ""
 
+#: src/blocks/grid-logo/constants/index.js:29
 #: src/blocks/logo-carousel/constants/index.js:20
 msgid "GrayScale"
 msgstr ""
 
+#: src/blocks/grid-logo/constants/index.js:33
 #: src/blocks/logo-carousel/constants/index.js:24
 msgid "Zoom In"
 msgstr ""
 
+#: src/blocks/grid-logo/constants/index.js:37
 #: src/blocks/logo-carousel/constants/index.js:28
 msgid "Zoom Out"
+msgstr ""
+
+#: src/blocks/grid-logo/constants/index.js:44
+msgid "Slide Up"
+msgstr ""
+
+#: src/blocks/grid-logo/constants/index.js:48
+msgid "Slide Down"
+msgstr ""
+
+#: src/blocks/grid-logo/constants/index.js:52
+msgid "Slide Left"
+msgstr ""
+
+#: src/blocks/grid-logo/constants/index.js:56
+msgid "Slide Right"
+msgstr ""
+
+#: src/blocks/grid-logo/constants/index.js:60
+msgid "Scale"
+msgstr ""
+
+#: src/blocks/grid-logo/constants/index.js:66
+#: src/blocks/grid-logo/constants/index.js:73
+#: src/constants/index.js:183
+#: src/controls/border-control/dimension.js:64
+#: src/controls/res-box-control/dimension.js:61
+msgid "Top"
+msgstr ""
+
+#: src/blocks/grid-logo/constants/index.js:67
+#: src/blocks/grid-logo/constants/index.js:74
+#: src/constants/index.js:226
+#: src/controls/border-control/dimension.js:76
+#: src/controls/res-box-control/dimension.js:73
+msgid "Bottom"
+msgstr ""
+
+#: src/blocks/grid-logo/constants/index.js:71
+#: src/constants/index.js:47
+#: src/constants/index.js:117
+#: src/controls/border-control/dimension.js:82
+#: src/controls/res-box-control/dimension.js:79
+msgid "Left"
+msgstr ""
+
+#: src/blocks/grid-logo/constants/index.js:72
+#: src/constants/index.js:91
+#: src/constants/index.js:160
+#: src/controls/border-control/dimension.js:70
+#: src/controls/res-box-control/dimension.js:67
+msgid "Right"
+msgstr ""
+
+#: src/blocks/grid-logo/edit.js:113
+#: src/blocks/logo-carousel/edit.js:243
+msgid "Edit Logos"
+msgstr ""
+
+#: src/blocks/grid-logo/edit.js:140
+msgid "Upload Logos"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:72
+msgid "General"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:74
+msgid "Enable Link"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:79
+msgid "Show Caption"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:84
+msgid "Show Description"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:89
+#: src/blocks/logo-carousel/inspect.js:143
+msgid "Layout"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:91
+msgid "Columns"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:99
+#: src/blocks/grid-logo/inspect.js:156
+#: src/blocks/logo-carousel/inspect.js:171
+msgid "Gap"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:107
+#: src/blocks/logo-carousel/inspect.js:492
+msgid "Hover Effect"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:109
+msgid "Select effect"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:117
+msgid "Content Visibility"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:119
+msgid "Alignment"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:124
+#: src/blocks/logo-carousel/inspect.js:322
+msgid "Visible On"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:136
+#: src/blocks/grid-logo/inspect.js:180
+#: src/blocks/logo-carousel/inspect.js:336
+msgid "Position"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:149
+msgid "Vertical Alignment"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:172
+#: src/blocks/logo-carousel/inspect.js:447
+#: src/blocks/logo-carousel/inspect.js:456
+msgid "Type"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:190
+msgid "Animation"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:202
+#: src/blocks/logo-carousel/inspect.js:468
+#: src/blocks/logo/inspect.js:36
+msgid "Unlock more features with the Pro version."
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:213
+msgid "Item"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:216
+#: src/blocks/grid-logo/inspect.js:243
+#: src/blocks/logo-carousel/inspect.js:528
+#: src/blocks/logo-carousel/inspect.js:599
+#: src/blocks/logo-carousel/inspect.js:713
+msgid "Border Radius"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:222
+#: src/blocks/grid-logo/inspect.js:250
+#: src/blocks/logo-carousel/inspect.js:480
+#: src/blocks/logo-carousel/inspect.js:544
+msgid "Padding"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:224
+#: src/blocks/grid-logo/inspect.js:256
+msgid " Background"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:229
+msgid "Logo"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:231
+msgid "Size"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:240
+msgid "Content"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:263
+#: src/blocks/logo-carousel/inspect.js:320
+#: src/blocks/logo-carousel/inspect.js:548
+#: src/blocks/logo/inspect.js:22
+msgid "Caption"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:265
+#: src/blocks/grid-logo/inspect.js:285
+msgid "Typography"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:271
+#: src/blocks/grid-logo/inspect.js:290
+#: src/blocks/logo-carousel/inspect.js:550
+#: src/blocks/logo-carousel/inspect.js:703
+#: src/controls/background-control/index.js:78
+msgid "Color"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:279
+#: src/blocks/grid-logo/inspect.js:298
+#: src/blocks/logo-carousel/inspect.js:605
+#: src/blocks/logo-carousel/inspect.js:649
+msgid "Margin"
+msgstr ""
+
+#: src/blocks/grid-logo/inspect.js:283
+#: src/blocks/logo/inspect.js:29
+msgid "Description"
 msgstr ""
 
 #: src/blocks/logo-carousel/constants/index.js:39
@@ -148,148 +509,256 @@ msgstr ""
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/logo-carousel/edit.js:167
-msgid "Edit Logos"
+#: src/blocks/logo-carousel/constants/index.js:101
+msgid "Top Left (Pro)"
 msgstr ""
 
-#: src/blocks/logo-carousel/edit.js:221
-#: src/blocks/logo-carousel/save.js:109
+#: src/blocks/logo-carousel/constants/index.js:106
+msgid "Top Center (Pro)"
+msgstr ""
+
+#: src/blocks/logo-carousel/constants/index.js:111
+msgid "Top Right (Pro)"
+msgstr ""
+
+#: src/blocks/logo-carousel/constants/index.js:116
+msgid "Center Center"
+msgstr ""
+
+#: src/blocks/logo-carousel/constants/index.js:120
+msgid "Bottom Left (Pro)"
+msgstr ""
+
+#: src/blocks/logo-carousel/constants/index.js:125
+msgid "Bottom Center (Pro)"
+msgstr ""
+
+#: src/blocks/logo-carousel/constants/index.js:130
+msgid "Bottom Right (Pro)"
+msgstr ""
+
+#: src/blocks/logo-carousel/constants/index.js:138
+msgid "Bullets"
+msgstr ""
+
+#: src/blocks/logo-carousel/constants/index.js:142
+msgid "Numbers"
+msgstr ""
+
+#: src/blocks/logo-carousel/constants/index.js:146
+msgid "Progressbar"
+msgstr ""
+
+#: src/blocks/logo-carousel/edit.js:304
+#: src/blocks/logo-carousel/save.js:137
 msgid "No Caption Available"
 msgstr ""
 
-#: src/blocks/logo-carousel/edit.js:244
+#: src/blocks/logo-carousel/edit.js:330
 msgid "Add Logos"
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:51
+#: src/blocks/logo-carousel/inspect.js:111
 msgid "Enable Logos link?"
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:56
+#: src/blocks/logo-carousel/inspect.js:117
 msgid "Show Logo Caption"
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:61
+#: src/blocks/logo-carousel/inspect.js:123
 msgid "Show Navigation"
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:70
+#: src/blocks/logo-carousel/inspect.js:133
 msgid "Show Pagination"
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:79
-msgid "Columns"
-msgstr ""
-
-#: src/blocks/logo-carousel/inspect.js:81
-msgid "Colunms Number"
-msgstr ""
-
-#: src/blocks/logo-carousel/inspect.js:87
-msgid "Colunms Gap"
-msgstr ""
-
-#: src/blocks/logo-carousel/inspect.js:93
-msgid "Carousel Options"
-msgstr ""
-
-#: src/blocks/logo-carousel/inspect.js:95
-msgid "Speed"
-msgstr ""
-
-#: src/blocks/logo-carousel/inspect.js:112
-msgid "Enable Autoplay"
-msgstr ""
-
-#: src/blocks/logo-carousel/inspect.js:119
-msgid "Autoplay Delay"
-msgstr ""
-
-#: src/blocks/logo-carousel/inspect.js:128
-msgid "Pause Autoplay On Hover"
-msgstr ""
-
-#: src/blocks/logo-carousel/inspect.js:137
-msgid "Reserve Autoplay Direction"
-msgstr ""
-
-#: src/blocks/logo-carousel/inspect.js:148
-msgid "Enable Infinite Loop"
+#: src/blocks/logo-carousel/inspect.js:145
+msgid "Colunms"
 msgstr ""
 
 #: src/blocks/logo-carousel/inspect.js:153
-msgid "Enable Auto Height"
+#: src/blocks/logo-carousel/inspect.js:162
+msgid "Rows"
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:158
-msgid "Enable Keyboard Control"
+#: src/blocks/logo-carousel/inspect.js:178
+msgid "Carousel Options"
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:163
-msgid "Enable Mouse Control"
+#: src/blocks/logo-carousel/inspect.js:180
+msgid "Speed"
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:169
-msgid "Logo Links"
-msgstr ""
-
-#: src/blocks/logo-carousel/inspect.js:173
-msgid "Open links in new tab?"
-msgstr ""
-
-#: src/blocks/logo-carousel/inspect.js:189
-msgid "Enter URL"
-msgstr ""
-
-#: src/blocks/logo-carousel/inspect.js:196
-msgid "Please add logos to enable links."
-msgstr ""
-
-#: src/blocks/logo-carousel/inspect.js:202
-#: src/blocks/logo-carousel/inspect.js:294
-msgid "Caption"
+#: src/blocks/logo-carousel/inspect.js:197
+msgid "Enable Autoplay"
 msgstr ""
 
 #: src/blocks/logo-carousel/inspect.js:204
-msgid "Visible On"
+msgid "Autoplay Delay"
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:219
-msgid "Logo Style"
+#: src/blocks/logo-carousel/inspect.js:213
+msgid "Pause Autoplay On Hover"
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:221
-msgid "Hover Effect"
+#: src/blocks/logo-carousel/inspect.js:222
+msgid "Reserve Autoplay Direction"
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:230
-msgid "Border Style"
+#: src/blocks/logo-carousel/inspect.js:233
+msgid "Enable Infinite Loop"
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:241
-msgid "Border Width"
+#: src/blocks/logo-carousel/inspect.js:238
+msgid "Enable Auto Height"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:243
+msgid "Enable Keyboard Control"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:248
+msgid "Enable Mouse Control"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:254
+msgid "Logo Links"
 msgstr ""
 
 #: src/blocks/logo-carousel/inspect.js:258
-msgid "Border Color"
+msgid "Link Type"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:261
+msgid "Index Based"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:262
+msgid "Logo Based"
 msgstr ""
 
 #: src/blocks/logo-carousel/inspect.js:266
-msgid "Border Radius"
+msgid "In index based, if you change logo, links will be removed. In logo based, links will remain the same. But you have to set links for each logo in Media Library."
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:283
-msgid "Padding"
+#: src/blocks/logo-carousel/inspect.js:273
+msgid "Note: Make sure to set links in each logo settings in Media Library."
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:288
-#: src/blocks/logo-carousel/inspect.js:305
+#: src/blocks/logo-carousel/inspect.js:282
+msgid "Learn More"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:287
+msgid "Open links in new tab?"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:307
+msgid "Enter URL"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:314
+msgid "Please add logos to enable links."
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:334
+#: src/blocks/logo-carousel/inspect.js:571
+msgid "Navigation"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:344
+#: src/blocks/logo-carousel/inspect.js:351
+msgid "Custom Navigation"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:379
+msgid "Upload for Previous"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:413
+msgid "Upload for Next"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:430
+msgid "Previous"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:434
+msgid "Next"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:444
+#: src/blocks/logo-carousel/inspect.js:648
+msgid "Pagination"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:479
+msgid "Container"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:482
+msgid "Logo Style"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:484
+msgid "Max Width"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:501
+msgid "Border Style"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:512
+msgid "Border Width"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:520
+msgid "Border Color"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:545
+#: src/blocks/logo-carousel/inspect.js:559
+#: src/blocks/logo-carousel/inspect.js:619
+#: src/blocks/logo-carousel/inspect.js:637
 msgid "Background"
 msgstr ""
 
-#: src/blocks/logo-carousel/inspect.js:296
-#: src/controls/background-control/index.js:77
-msgid "Color"
+#: src/blocks/logo-carousel/inspect.js:573
+#: src/blocks/logo-carousel/inspect.js:664
+#: src/blocks/logo-carousel/inspect.js:684
+msgid "Width"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:581
+#: src/blocks/logo-carousel/inspect.js:672
+#: src/blocks/logo-carousel/inspect.js:692
+msgid "Height"
+msgstr ""
+
+#: src/blocks/logo-carousel/inspect.js:589
+msgid "Icon Size"
+msgstr ""
+
+#: src/blocks/logo/edit.js:95
+msgid "write caption.."
+msgstr ""
+
+#: src/blocks/logo/edit.js:109
+msgid "write description.."
+msgstr ""
+
+#: src/blocks/logo/edit.js:131
+msgid "Upload Logo"
+msgstr ""
+
+#: src/blocks/logo/save.js:69
+msgid "No Caption"
+msgstr ""
+
+#: src/blocks/logo/save.js:74
+msgid "No Description"
 msgstr ""
 
 #: src/constants/index.js:16
@@ -304,39 +773,13 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: src/constants/index.js:47
-#: src/constants/index.js:117
-#: src/controls/border-control/dimension.js:82
-#: src/controls/res-box-control/dimension.js:79
-msgid "Left"
-msgstr ""
-
 #: src/constants/index.js:69
 #: src/constants/index.js:138
 msgid "Center"
 msgstr ""
 
-#: src/constants/index.js:91
-#: src/constants/index.js:160
-#: src/controls/border-control/dimension.js:70
-#: src/controls/res-box-control/dimension.js:67
-msgid "Right"
-msgstr ""
-
-#: src/constants/index.js:183
-#: src/controls/border-control/dimension.js:64
-#: src/controls/res-box-control/dimension.js:61
-msgid "Top"
-msgstr ""
-
 #: src/constants/index.js:204
 msgid "Middle"
-msgstr ""
-
-#: src/constants/index.js:226
-#: src/controls/border-control/dimension.js:76
-#: src/controls/res-box-control/dimension.js:73
-msgid "Bottom"
 msgstr ""
 
 #: src/constants/index.js:298
@@ -385,14 +828,14 @@ msgstr ""
 msgid "Span"
 msgstr ""
 
-#: src/controls/background-control/index.js:55
+#: src/controls/background-control/index.js:56
 #: src/controls/color-control/index.js:32
 #: src/controls/colors-control/index.js:35
 #: src/controls/reset-btn/index.js:18
 msgid "Reset"
 msgstr ""
 
-#: src/controls/background-control/index.js:100
+#: src/controls/background-control/index.js:101
 msgid "Background Image"
 msgstr ""
 
@@ -455,6 +898,10 @@ msgstr ""
 msgid "Add sponsored rel"
 msgstr ""
 
+#: src/controls/pro-wrapper/index.js:6
+msgid "Pro"
+msgstr ""
+
 #: src/controls/svg-modal/index.js:13
 msgid "Custom SVG"
 msgstr ""
@@ -476,32 +923,52 @@ msgstr ""
 msgid "Insert SVG"
 msgstr ""
 
-#: src/blocks/logo-carousel/block.json
+#: src/blocks/grid-logo/block.json
 msgctxt "block title"
-msgid "Logo Carousel"
+msgid "Grid"
 msgstr ""
 
+#: src/blocks/grid-logo/block.json
 #: src/blocks/logo-carousel/block.json
+#: src/blocks/logo/block.json
 msgctxt "block description"
 msgid "Shows clients logos in a carousel"
 msgstr ""
 
+#: src/blocks/grid-logo/block.json
 #: src/blocks/logo-carousel/block.json
+#: src/blocks/logo/block.json
 msgctxt "block keyword"
 msgid "logo"
 msgstr ""
 
+#: src/blocks/grid-logo/block.json
 #: src/blocks/logo-carousel/block.json
+#: src/blocks/logo/block.json
 msgctxt "block keyword"
 msgid "carousel"
 msgstr ""
 
+#: src/blocks/grid-logo/block.json
 #: src/blocks/logo-carousel/block.json
+#: src/blocks/logo/block.json
 msgctxt "block keyword"
 msgid "logo carousel"
 msgstr ""
 
+#: src/blocks/grid-logo/block.json
 #: src/blocks/logo-carousel/block.json
+#: src/blocks/logo/block.json
 msgctxt "block keyword"
 msgid "logo slider"
+msgstr ""
+
+#: src/blocks/logo-carousel/block.json
+msgctxt "block title"
+msgid "Carousel"
+msgstr ""
+
+#: src/blocks/logo/block.json
+msgctxt "block title"
+msgid "Logo"
 msgstr ""

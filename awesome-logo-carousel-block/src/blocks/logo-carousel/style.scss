@@ -1,0 +1,170 @@
+/*
+* Style Works for both Editor and Frontend
+*/
+
+.wp-block-lcb-logo-carousel {
+    position: relative;
+    padding: 0 30px;
+    &.alcb__active_pagination {
+        padding: 40px 30px;
+    }
+    .swiper-wrapper {
+        align-items: center;
+    }
+    .alcb__logo-item {
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+        &:hover {
+            .alcb__logo-caption.caption__hover {
+                height: auto;
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+    .alcb__logo-caption {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        padding: 0 10px;
+        font-size: 14px;
+        line-height: 2;
+        &.caption__hover {
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+            transform: translateY(10px);
+        }
+    }
+
+    // logo hover effects
+    .alcb__logo-image {
+        text-align: center;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            max-width: 100%;
+            transition: 0.2s ease-in-out;
+        }
+        &.alcb__normal_to_gray {
+            &:hover {
+                img {
+                    filter: grayscale(100%);
+                }
+            }
+        }
+        &.alcb__zoom_in {
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        &.alcb__zoom_out {
+            img {
+                transform: scale(1.1);
+            }
+            &:hover {
+                img {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    // swiper navigation arrows
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: #000;
+        transition: 0.3s ease-in-out;
+    }
+
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+        left: 0;
+    }
+
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+        right: 0;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after,
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .custom-nav {
+        &::after {
+            display: none !important;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .navigation {
+        &.nav-pos {
+            position: absolute;
+            display: flex;
+            gap: 4px;
+
+            .alcb__prev,
+            .alcb__next {
+                position: relative;
+                margin: 0;
+            }
+        }
+        &.top-left {
+            top: 0;
+            left: 0;
+        }
+
+        &.top-center {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &.top-right {
+            top: 0;
+            right: 0;
+        }
+
+        &.bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+
+        &.bottom-center {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &.bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+
+// mobile view
+@media screen and (max-width: 767px) {
+    .wp-block-lcb-logo-carousel {
+        &.alcb__active_pagination {
+            padding: 30px 30px 40px;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.alcb-switcher {
+    .components-button-group {
+        width: 100%;
+        margin-bottom: 0;
+        display: flex;
+    }
+
+    .switcher-button {
+        width: 100%;
+        justify-content: center;
+        box-shadow: inset 0 0 0 1px #e0e0e0 !important;
+        &.alcb-active {
+            background-color: #eeeeee;
+        }
+    }
+}
+
+.alcb-switcher-content {
+    margin-top: 16px !important;
+}

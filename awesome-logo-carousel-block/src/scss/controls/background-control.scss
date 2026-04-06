@@ -1,0 +1,145 @@
+.alcb-control-container {
+    &.background-control {
+        .components-base-control {
+            margin-bottom: 0 !important;
+
+            .components-base-control__label {
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+    .bg-type {
+        .components-button {
+            box-shadow: inset 0 0 0 1px #e0e0e0;
+            height: 30px;
+            // &:focus {
+            // 	outline: none !important;
+            // }
+            &.active {
+                background: #eeeeee;
+                path {
+                    fill: #2563eb;
+                }
+            }
+        }
+    }
+
+    &.alcb-gradient-control {
+        .components-base-control__label {
+            margin-bottom: 8px !important;
+        }
+    }
+
+    .alcb-editor-icon.alcb-reset-button {
+        min-width: none;
+        padding: 0;
+    }
+
+    .alcb-editor-icon {
+        &.bg-btn {
+            box-shadow: inset 0 0 0 1px #e0e0e0;
+            &.active {
+                background: #eeeeee;
+            }
+        }
+    }
+}
+
+.alcb-img-background {
+    .components-flex {
+        gap: 0;
+    }
+    button.alcb-btn {
+        background: #eee;
+        border: 1px solid #e0e0e0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        min-width: auto !important;
+        cursor: pointer;
+    }
+
+    button.alcb-btn svg {
+        fill: #2d62ff;
+    }
+}
+
+.alcb-bg-panel {
+    width: 250px;
+    padding: 15px;
+    box-sizing: border-box;
+
+    .color-indicator {
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        width: 25px;
+        height: 25px;
+        &.hover-colors {
+            margin-left: 5px;
+        }
+    }
+    .component-color-indicator {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(45deg, #ddd 25%, transparent 0), linear-gradient(-45deg, #ddd 25%, transparent 0),
+            linear-gradient(45deg, transparent 75%, #ddd 0), linear-gradient(-45deg, transparent 75%, #ddd 0);
+        background-size: 10px 10px;
+        background-position:
+            0 0,
+            0 5px,
+            5px -5px,
+            -5px 0;
+    }
+
+    .components-toggle-control {
+        margin: 16px 0 !important;
+    }
+
+    .components-base-control {
+        margin-bottom: 16px;
+    }
+
+    .components-flex-item {
+        .components-base-control,
+        .components-base-control__label,
+        .components-base-control__field {
+            margin-bottom: 0 !important;
+        }
+
+        .components-base-control__label {
+            font-size: 13px !important;
+            text-transform: capitalize !important;
+            font-weight: 400 !important;
+        }
+    }
+
+    .components-form-toggle.is-checked .components-form-toggle__track {
+        background-color: #2d62ff !important;
+    }
+
+    .single-rangle {
+        margin-top: 16px !important;
+    }
+}
+
+.alcb-bg-panel .components-input-control__label {
+    font-size: 13px !important;
+    text-transform: capitalize !important;
+    font-weight: 400 !important;
+}
+
+.alcb-bg-panel .components-input-control__backdrop {
+    border-color: #cccccc !important;
+}
+
+.alcb-bg-panel .components-select-control__input {
+    height: 36px !important;
+}

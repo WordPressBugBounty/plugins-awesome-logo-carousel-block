@@ -1,0 +1,97 @@
+// icon picker popup
+.components-modal__frame.svgib__modal {
+    width: 1000px;
+    height: 550px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    .alcb-modal__wrapper {
+        display: flex;
+        gap: 10px;
+    }
+
+    .alcb-categories__sidebar {
+        width: 200px;
+        min-width: 200px;
+    }
+
+    .modal__content {
+        width: calc(100% - 200px);
+    }
+
+    .components-input-control__container input {
+        padding: 15px !important;
+        height: 50px !important;
+    }
+
+    .components-input-control__container {
+        margin-left: 15px;
+        width: calc(100% - 20px);
+    }
+
+    .components-button.single__icon {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.single__icon.active {
+            background: #3858e912 !important;
+            border-color: #3858e9 !important;
+        }
+    }
+
+    .category__button {
+        width: 100%;
+        background: none;
+        border: none;
+        border-radius: 0;
+        padding: 20px 10px;
+        gap: 8px;
+        font-size: 13px;
+        color: #000;
+        &.active {
+            background: #f0f0f0;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        svg {
+            width: 20px;
+            fill: none;
+        }
+    }
+
+    .category__button + .category__button {
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .single__icon_svg svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    button.components-button.single__icon {
+        width: 50px;
+        height: 50px;
+        background: #f7f7f7;
+        border: 1px solid #ccc;
+    }
+
+    .svgib__icons-container > div {
+        width: 100% !important;
+    }
+
+    .svgib__icons-container > div > div {
+        width: 100% !important;
+    }
+
+    .svgib__icons-grid {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 15px;
+    }
+}

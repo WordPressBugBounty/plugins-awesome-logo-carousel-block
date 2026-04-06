@@ -1,0 +1,30 @@
+// Responsive Button Control
+.alcb-res-btn {
+    .components-button-group {
+        gap: 3px;
+    }
+
+    .alcb-device-btn {
+        padding: 2px !important;
+        margin: 0;
+        min-height: auto !important;
+        width: 18px;
+        height: 18px !important;
+        border-radius: 50% !important;
+        justify-content: center;
+        box-shadow: none !important;
+        &:focus {
+            outline: none;
+            box-shadow: none !important;
+        }
+        svg {
+            width: 14px;
+            height: 8px;
+        }
+        &.alcb-active {
+            svg {
+                fill: #2563eb;
+            }
+        }
+    }
+}

@@ -1,0 +1,117 @@
+.alcb-border-style {
+    .components-flex {
+        flex-direction: row !important;
+    }
+    .components-flex-item {
+        flex: 1 1 auto !important;
+        display: flex;
+        align-items: center;
+    }
+    .components-select-control__input {
+        min-width: 100px;
+    }
+}
+
+.alcb-single-inputs-group {
+    .single-input {
+        .components-input-control__label {
+            font-size: 10px !important;
+            text-transform: capitalize !important;
+            color: #b3b3b3;
+            display: block;
+            margin-top: 2px;
+            text-align: center;
+        }
+    }
+}
+
+.affra-color-style-btn {
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    min-height: auto;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    .component-color-indicator {
+        width: 18px;
+        height: 18px;
+        display: block;
+        min-width: 18px;
+        border: 0;
+    }
+}
+
+.alcb-color-style-popover {
+    .components-popover__content {
+        width: 230px;
+        padding: 15px;
+        .border-style-label {
+            font-size: 13px;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+        .colors-tabs {
+            display: flex;
+            align-items: stretch;
+            margin-bottom: 16px;
+            .single-tab {
+                background: none;
+                border: none;
+                width: 100%;
+                padding: 0px 15px 15px;
+                border-bottom: 1px solid #e0e0e0;
+                cursor: pointer;
+                &.active {
+                    border-bottom: 2px solid #2563eb;
+                }
+            }
+        }
+        .components-color-palette__custom-color-button {
+            height: 45px !important;
+        }
+        .components-color-palette__custom-color-text-wrapper {
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            gap: 8px;
+        }
+
+        .border-styles {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            justify-content: space-between;
+        }
+
+        .b-styles {
+            display: flex;
+            gap: 8px;
+            .alcb-btn-group {
+                display: inline-flex !important;
+            }
+            .border-style-btn {
+                background: none;
+                border: none;
+                padding: 0;
+                height: 25px;
+                cursor: pointer;
+                width: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.active {
+                    background: #000;
+                    svg {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

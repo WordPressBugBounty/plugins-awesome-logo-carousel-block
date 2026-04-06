@@ -1,0 +1,54 @@
+.gutslider-image-preview {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 16px;
+    width: 100%;
+    height: 140px;
+
+    &.svg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            max-width: 250px;
+            max-height: 120px;
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: none;
+    }
+
+    .edit-btn,
+    .remove-btn {
+        position: absolute;
+        top: 15px;
+        background: rgba(227, 227, 227, 0.8) !important;
+        width: 25px !important;
+        height: 25px !important;
+        border-radius: 50%;
+        padding: 3px !important;
+        min-width: auto !important;
+
+        .dashicons {
+            width: 15px;
+            height: 15px;
+            font-size: 15px !important;
+        }
+    }
+
+    .edit-btn {
+        right: 15px;
+        left: auto;
+        color: #0c7938 !important;
+    }
+
+    .remove-btn {
+        left: 15px;
+        right: auto;
+        color: #8b0606;
+    }
+}

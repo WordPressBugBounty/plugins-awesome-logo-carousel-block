@@ -1,18 +1,18 @@
-=== Logo Carousel Gutenberg Block ===
-Contributors: gkits, Binsaifullah
+=== Awesome Logo Carousel Block ===
+Contributors: Binsaifullah
 Tags: logo carousel, logo slider, image carousel, carousel block, slider block
 Requires at least: 6.0
-Tested up to: 6.8
-Stable tag: 2.1.10
+Tested up to: 6.9
+Stable tag: 2.2.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Logo Carousel Block allows you to create interactive client logos carousel with Gutenberg Block Editor.
+Awesome Logo Carousel Block allows you to create interactive client logos carousel with Gutenberg Block Editor.
 
 == Description ==
 
-Logo Carousel Block - Create a beautiful logo carousel slider with the Gutenberg block editor. Logo Carousel Block allows you to create interactive client logos carousel with Gutenberg Block Editor. It is a highly customizable block that allows you to showcase clients' logos in a sliding manner.
+Awesome Logo Carousel Block - Create a beautiful logo carousel slider with the Gutenberg block editor. Logo Carousel Block allows you to create interactive client logos carousel with Gutenberg Block Editor. It is a highly customizable block that allows you to showcase clients' logos in a sliding manner.
 
 [Demo](https://logocarousel.gutenbergkits.com/) | [Get Pro](https://logocarousel.gutenbergkits.com/pricing)
 
@@ -43,6 +43,9 @@ Logo Carousel Block - Create a beautiful logo carousel slider with the Gutenberg
 - **Stagger Carousel** 
 - **Ticker / Marquee Carousel**
 - **Custom Navigation** 
+
+### Third Party Resource
+[Swiper Js](https://swiperjs.com/) is used in this plugin.
 
 == Installation ==
 
@@ -88,6 +91,19 @@ Yes, you can use the Logo Carousel Block in multiple posts, pages, or site secti
 Yes! The pro version includes additional features and customization options. You can check it out here.
 
 == Changelog ==
+= 2.2.3 =
+* Fixed: Style sanitization issue is fixed 
+* Added: support for Non Block theme
+
+= 2.2.2 = 
+* Improved: PHP codes are restructured
+
+= 2.2.1 = 
+* Prepared for WP.ORG review 
+* Fixed: Direct logos upload issue
+
+= 2.2.0 = 
+* Fixed: Logo link issues
 
 = 2.1.10 =
 * Fixed: Grid Layout overlay issue

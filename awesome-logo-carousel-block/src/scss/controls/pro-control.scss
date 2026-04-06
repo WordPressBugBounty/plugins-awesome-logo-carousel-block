@@ -1,0 +1,37 @@
+.alcb-pro-feature {
+    background: #eafcf7;
+    padding: 32px 16px;
+    box-sizing: border-box;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.pro-badge {
+    width: 36px;
+    margin: 0 auto 10px;
+    height: 36px;
+    background: #38a083;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+.alcb-after {
+    font-size: 14px;
+}
+
+.alcb-after a {
+    text-decoration: none;
+    border: 1px solid #38a083;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    color: #fff;
+    display: inline-flex;
+    margin-top: 10px;
+    border-radius: 3px;
+    background: #38a083;
+    font-size: 14px;
+    align-items: center;
+    gap: 5px;
+}

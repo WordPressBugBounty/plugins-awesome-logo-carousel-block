@@ -1,0 +1,30 @@
+{
+    "apiVersion": 3,
+    "name": "lcb/logo",
+    "version": "0.1.0",
+    "title": "Logo",
+    "category": "alcb-blocks",
+    "description": "Shows clients logos in a carousel",
+    "supports": {
+        "html": false,
+        "customClassName": false,
+        "className": false,
+        "anchor": false
+    },
+    "parent": ["lcb/grid-logo"],
+    "usesContext": [
+        "lcb/enableLink",
+        "lcb/captionVisibility",
+        "lcb/contentVisiblity",
+        "lcb/showDesc",
+        "lcb/logoHoverStyle",
+        "lcb/hoverOverlay",
+        "lcb/hoverEffect",
+        "lcb/contentPosition",
+        "lcb/visibleContentPosition"
+    ],
+    "keywords": ["logo", "carousel", "logo carousel", "logo slider"],
+    "textdomain": "awesome-logo-carousel-block",
+    "editorScript": ["file:./index.js", "alcb-global"],
+    "style": ["file:./style-index.css"]
+}

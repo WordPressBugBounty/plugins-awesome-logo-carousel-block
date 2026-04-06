@@ -1,0 +1,16 @@
+// Upload button
+.gutslider-upload-btn {
+    width: 100%;
+    height: 140px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 16px;
+    svg {
+        width: 30px;
+        height: 30px;
+        fill: #ccc;
+        margin-bottom: 8px;
+    }
+}
