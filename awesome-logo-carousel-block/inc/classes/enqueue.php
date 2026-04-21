@@ -91,6 +91,7 @@ class Alcb_Enqueue {
 				'hasPro' => class_exists( '\Alcb_Logo_Carousel_Pro' ),
 			]
 		);
+		wp_enqueue_script( 'alcb-global' );
 	}
 
 	/**

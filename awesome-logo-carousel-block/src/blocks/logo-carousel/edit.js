@@ -4,6 +4,8 @@ import { BlockControls, MediaPlaceholder, MediaUpload, MediaUploadCheck, useBloc
 import { ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { Fragment, useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import { Placeholder } from '@wordpress/components';
+import PatternsModal from '../pattern';
 import classnames from 'classnames';
 import { useSelect } from '@wordpress/data';
 
@@ -64,7 +66,9 @@ export default function Edit(props) {
         prevNav,
         nextNav,
         paginationType,
-        linkType
+        linkType,
+        patternMode,
+        openModal
     } = attributes;
 
     // blcok id
@@ -254,6 +258,7 @@ export default function Edit(props) {
             )}
             {isSelected && <Inspect {...props} />}
             <DynamicStyle {...props} />
+            {openModal && <PatternsModal {...props} />}
             <div
                 {...useBlockProps({
                     className: classnames(sliderId, {
@@ -261,10 +266,55 @@ export default function Edit(props) {
                     })
                 })}
             >
-                <div className="alcb__carousel_container swiper" ref={sliderRef}>
-                    <div className="swiper-wrapper">
-                        {images && images.length > 0 ? (
-                            <>
+                {patternMode && (!images || images.length === 0) && (
+                    <Placeholder icon="wordpress-alt" label={__('Awesome Logo Carousel', 'awesome-logo-carousel-block')}>
+                        <button
+                            className="alcb__skip-btn"
+                            onClick={() => {
+                                setAttributes({ patternMode: false, openModal: false });
+                            }}
+                        >
+                            {__('Skip', 'awesome-logo-carousel-block')}
+                        </button>
+                        <button
+                            className="alcb__use-pattern-btn"
+                            onClick={() => {
+                                setAttributes({ openModal: true });
+                            }}
+                        >
+                            <span className="text">{__('Use Pattern', 'awesome-logo-carousel-block')}</span>
+                        </button>
+                    </Placeholder>
+                )}
+
+                {!patternMode && (!images || images.length === 0) && (
+                    <MediaPlaceholder
+                        multiple={true}
+                        gallery={true}
+                        onSelect={media =>
+                            setAttributes({
+                                images: media,
+                                slideStatus: !slideStatus
+                            })
+                        }
+                        onFilesPreUpload={media =>
+                            setAttributes({
+                                images: Array.from(media),
+                                slideStatus: !slideStatus
+                            })
+                        }
+                        onSelectURL={false}
+                        allowedTypes={['image']}
+                        labels={{
+                            title: __('Add Logos', 'awesome-logo-carousel-block')
+                        }}
+                    />
+                )}
+
+                {images && images.length > 0 && (
+                    <>
+                        <div className="alcb__carousel_container swiper" ref={sliderRef}>
+                            <div className="swiper-wrapper">
                                 {images.map((logo, index) => {
                                     return (
                                         <DynamicTag
@@ -307,56 +357,34 @@ export default function Edit(props) {
                                         </DynamicTag>
                                     );
                                 })}
-                            </>
-                        ) : (
-                            <MediaPlaceholder
-                                multiple={true}
-                                gallery={true}
-                                onSelect={media =>
-                                    setAttributes({
-                                        images: media,
-                                        slideStatus: !slideStatus
-                                    })
-                                }
-                                onFilesPreUpload={media =>
-                                    setAttributes({
-                                        images: Array.from(media),
-                                        slideStatus: !slideStatus
-                                    })
-                                }
-                                onSelectURL={false}
-                                allowedTypes={['image']}
-                                labels={{
-                                    title: __('Add Logos', 'awesome-logo-carousel-block')
-                                }}
-                            />
+                            </div>
+                        </div>
+                        {showPagination && <div className="alcb__pag swiper-pagination"></div>}
+                        {showNav && (
+                            <div
+                                className={classnames('navigation', {
+                                    [navPosition]: navPosition !== '',
+                                    'nav-pos': navPosition !== ''
+                                })}
+                            >
+                                {customNavigation ? (
+                                    <>
+                                        <div className="alcb__prev custom-nav swiper-button-prev">
+                                            {prevNav?.url && <img src={prevNav.url} alt={prevNav.alt} id={prevNav.id} />}
+                                        </div>
+                                        <div className="alcb__next custom-nav swiper-button-next">
+                                            {nextNav?.url && <img src={nextNav.url} alt={nextNav.alt} id={nextNav.id} />}
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="alcb__prev swiper-button-prev"></div>
+                                        <div className="alcb__next swiper-button-next"></div>
+                                    </>
+                                )}
+                            </div>
                         )}
-                    </div>
-                </div>
-                {showPagination && <div className="alcb__pag swiper-pagination"></div>}
-                {showNav && (
-                    <div
-                        className={classnames('navigation', {
-                            [navPosition]: navPosition !== '',
-                            'nav-pos': navPosition !== ''
-                        })}
-                    >
-                        {customNavigation ? (
-                            <>
-                                <div className="alcb__prev custom-nav swiper-button-prev">
-                                    {prevNav?.url && <img src={prevNav.url} alt={prevNav.alt} id={prevNav.id} />}
-                                </div>
-                                <div className="alcb__next custom-nav swiper-button-next">
-                                    {nextNav?.url && <img src={nextNav.url} alt={nextNav.alt} id={nextNav.id} />}
-                                </div>
-                            </>
-                        ) : (
-                            <>
-                                <div className="alcb__prev swiper-button-prev"></div>
-                                <div className="alcb__next swiper-button-next"></div>
-                            </>
-                        )}
-                    </div>
+                    </>
                 )}
             </div>
         </Fragment>

@@ -10,6 +10,8 @@ import { ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { useDispatch, useSelect } from '@wordpress/data';
 import { Fragment, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import { Placeholder } from '@wordpress/components';
+import PatternsModal from '../pattern';
 import classnames from 'classnames';
 
 const { handleUniqueId } = window.alcbModules.Helpers;
@@ -24,7 +26,7 @@ import DynamicStyle from './style';
 
 export default function Edit(props) {
     const { attributes, setAttributes, clientId, isSelected, context } = props;
-    const { sliderId, showPagination, images, enableLink } = attributes;
+    const { sliderId, showPagination, images, enableLink, patternMode, openModal } = attributes;
 
     // Get dispatch functions
     const { replaceInnerBlocks } = useDispatch('core/block-editor');
@@ -121,6 +123,7 @@ export default function Edit(props) {
 
             {isSelected && <Inspect {...props} />}
             <DynamicStyle {...props} />
+            {openModal && <PatternsModal {...props} />}
             <div
                 {...useBlockProps({
                     className: classnames(sliderId, {
@@ -128,9 +131,28 @@ export default function Edit(props) {
                     })
                 })}
             >
-                {images && images.length > 0 ? (
-                    <div {...innerBlocksPros} />
-                ) : (
+                {patternMode && (!images || images.length === 0) && (
+                    <Placeholder icon="wordpress-alt" label={__('Awesome Logo Carousel', 'awesome-logo-carousel-block')}>
+                        <button
+                            className="alcb__skip-btn"
+                            onClick={() => {
+                                setAttributes({ patternMode: false, openModal: false });
+                            }}
+                        >
+                            {__('Skip', 'awesome-logo-carousel-block')}
+                        </button>
+                        <button
+                            className="alcb__use-pattern-btn"
+                            onClick={() => {
+                                setAttributes({ openModal: true });
+                            }}
+                        >
+                            <span className="text">{__('Use Pattern', 'awesome-logo-carousel-block')}</span>
+                        </button>
+                    </Placeholder>
+                )}
+
+                {!patternMode && (!images || images.length === 0) && (
                     <MediaPlaceholder
                         onSelect={v => {
                             setAttributes({ images: v });
@@ -139,6 +161,10 @@ export default function Edit(props) {
                         multiple={true}
                         labels={{ title: __('Upload Logos', 'awesome-logo-carousel-block') }}
                     />
+                )}
+
+                {images && images.length > 0 && (
+                    <div {...innerBlocksPros} />
                 )}
             </div>
         </Fragment>

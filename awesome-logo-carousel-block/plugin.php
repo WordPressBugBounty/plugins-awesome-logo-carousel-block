@@ -5,7 +5,7 @@
  * Description:       Showcase brand logos in interactive grid, carousel, slider, ticker, and list view.
  * Requires at least: 6.0
  * Requires PHP:      7.4
- * Version:           2.2.3
+ * Version:           2.2.4
  * Author:            Gutenbergkits Team
  * Author URI:        https://gutenbergkits.com
  * License:           GPL-2.0-or-later
@@ -33,7 +33,7 @@ final class Alcb_Plugin {
 	 *
 	 * @var string
 	 */
-	const VERSION = '2.2.3';
+	const VERSION = '2.2.4';
 
 	/**
 	 * Instance

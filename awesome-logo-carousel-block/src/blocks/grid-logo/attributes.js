@@ -33,6 +33,14 @@ import {
 } from './constants';
 
 const attributes = {
+    patternMode: {
+        type: 'boolean',
+        default: true
+    },
+    openModal: {
+        type: 'boolean',
+        default: false
+    },
     images: {
         type: 'array',
         default: []
