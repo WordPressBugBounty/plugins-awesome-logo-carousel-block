@@ -6,8 +6,8 @@ const {
     generateRangeStyles,
     generateTypographyStyles,
     generateAlignmentStyles
-} = window?.alcbModules;
-const { softMinifyCssStrings, styleGenerator } = window?.alcbModules?.Helpers;
+} = window?.alcbModules || {};
+const { softMinifyCssStrings, styleGenerator } = window?.alcbModules?.Helpers || {};
 
 import {
     ALIGN,

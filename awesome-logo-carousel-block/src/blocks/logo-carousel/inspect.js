@@ -54,7 +54,7 @@ const {
     ProWrapper,
     UploadBtn,
     Preview
-} = window?.alcbModules;
+} = window?.alcbModules || {};
 
 const Inspect = ({ attributes, setAttributes }) => {
     const {
@@ -607,7 +607,7 @@ const Inspect = ({ attributes, setAttributes }) => {
                             normal={
                                 <Fragment>
                                     <ColorControl
-                                        label={__('Color', 'slider-blocks')}
+                                        label={__('Color', 'awesome-logo-carousel-block')}
                                         value={iconColor}
                                         onChange={v => {
                                             setAttributes({
@@ -625,7 +625,7 @@ const Inspect = ({ attributes, setAttributes }) => {
                             hover={
                                 <Fragment>
                                     <ColorControl
-                                        label={__('Color', 'slider-blocks')}
+                                        label={__('Color', 'awesome-logo-carousel-block')}
                                         value={iconHoverColor}
                                         onChange={v => {
                                             setAttributes({
@@ -650,11 +650,11 @@ const Inspect = ({ attributes, setAttributes }) => {
                         <SwitcherControl
                             options={[
                                 {
-                                    label: __('Normal', 'slider-blocks'),
+                                    label: __('Normal', 'awesome-logo-carousel-block'),
                                     value: 'normal'
                                 },
                                 {
-                                    label: __('Active', 'slider-blocks'),
+                                    label: __('Active', 'awesome-logo-carousel-block'),
                                     value: 'hover'
                                 }
                             ]}

@@ -28,6 +28,7 @@
   "textdomain": "awesome-logo-carousel-block",
   "editorScript": [
     "file:./index.js",
+    "alcb-modules",
     "alcb-global"
   ],
   "editorStyle": [

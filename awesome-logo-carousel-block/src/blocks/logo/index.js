@@ -12,6 +12,9 @@ import Save from './save';
 // attributes
 import attributes from './attributes';
 
+// frozen save snapshots for content written by earlier versions
+import deprecated from './deprecated';
+
 /**
  * Block Registration
  */
@@ -26,6 +29,7 @@ registerBlockType(metadata, {
         )
     },
     attributes,
+    deprecated,
     edit: Edit,
     save: Save
 });

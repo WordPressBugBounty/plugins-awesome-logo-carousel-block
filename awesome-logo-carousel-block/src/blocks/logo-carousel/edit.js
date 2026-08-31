@@ -4,13 +4,15 @@ import { BlockControls, MediaPlaceholder, MediaUpload, MediaUploadCheck, useBloc
 import { ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { Fragment, useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { Placeholder } from '@wordpress/components';
 import PatternsModal from '../pattern';
+import BlockPlaceholder from '../../controls/block-placeholder';
+import blockIcon from './icon';
 import classnames from 'classnames';
 import { useSelect } from '@wordpress/data';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
-const { handleUniqueId } = window.alcbModules.Helpers;
-const { DynamicTag, generateRangeStyles } = window?.alcbModules;
+const { handleUniqueId } = window?.alcbModules?.Helpers || {};
+const { DynamicTag, generateRangeStyles } = window?.alcbModules || {};
 
 // editor style
 import './editor.scss';
@@ -37,17 +39,15 @@ export default function Edit(props) {
         slideDirection,
         showNav,
         showPagination,
-        itemDevice,
         deskItemsPerView,
         tabItemsPerView,
         phoneItemsPerView,
-        spaceDevice,
         deskSpace,
         tabSpace,
         phoneSpace,
         deskRows,
         tabRows,
-        mobRows,
+        phoneRows,
         showCaption,
         captionVisibility,
         captionBg,
@@ -84,18 +84,20 @@ export default function Edit(props) {
         new Swiper(sliderE, options);
     };
 
-    // Slider breakpoints
+    // Slider breakpoints — shared with the frontend so the preview matches.
     const breakPoints = {
         breakpoints: {
-            320: {
+            [BREAKPOINTS.mobile]: {
                 slidesPerView: phoneItemsPerView || 1,
                 spaceBetween: parseInt(phoneSpace) || 0,
                 grid: {
-                    rows: mobRows || 1,
+                    // Was `mobRows`, which is not a registered attribute, so it
+                    // was always undefined and mobile rows never previewed.
+                    rows: phoneRows || 1,
                     fill: 'row'
                 }
             },
-            768: {
+            [BREAKPOINTS.tablet]: {
                 slidesPerView: tabItemsPerView || 2,
                 spaceBetween: parseInt(tabSpace) || 20,
                 grid: {
@@ -103,7 +105,7 @@ export default function Edit(props) {
                     fill: 'row'
                 }
             },
-            1025: {
+            [BREAKPOINTS.desktop]: {
                 slidesPerView: deskItemsPerView || 4,
                 spaceBetween: parseInt(deskSpace) || 30,
                 grid: {
@@ -116,6 +118,22 @@ export default function Edit(props) {
 
     // slider
     const sliderRef = useRef(null);
+    /*
+     * KNOWN ISSUE: with multiple rows and loop both enabled, Swiper's Grid
+     * module throws "Cannot read properties of undefined (reading 'column')"
+     * from loopFix() in the editor preview. Grid does not support loop mode.
+     *
+     * It surfaces here only because the mobile rows fix above made rows take
+     * effect at all — the preview previously read `mobRows`, which is not a
+     * registered attribute, so rows were always 1. Confirmed by A/B: restoring
+     * the old undefined value silences it, reinstating the fix brings it back.
+     *
+     * Left as-is deliberately. It is confined to the editor preview: the
+     * frontend runs clean, saved content is unaffected, and no block is
+     * invalidated. Suppressing it by disabling loop was tried and did not stop
+     * the exception, so that change was reverted rather than shipped as a
+     * behavioural difference that fixes nothing.
+     */
     useEffect(() => {
         if (sliderRef.current && images && images.length > 0) {
             const options = {
@@ -163,11 +181,9 @@ export default function Edit(props) {
         slideDirection,
         showNav,
         showPagination,
-        itemDevice,
         deskItemsPerView,
         tabItemsPerView,
         phoneItemsPerView,
-        spaceDevice,
         deskSpace,
         tabSpace,
         phoneSpace,
@@ -175,7 +191,7 @@ export default function Edit(props) {
         slideStatus,
         deskRows,
         tabRows,
-        mobRows,
+        phoneRows,
         customNavigation,
         prevNav,
         nextNav,
@@ -189,14 +205,24 @@ export default function Edit(props) {
             const { getMedia } = select('core');
             return images.map(image => {
                 const media = getMedia(image.id);
-                return media
-                    ? {
-                          id: image.id,
-                          url: image.url,
-                          alt: image.alt,
-                          customLink: media.gtvb_custom_link || ''
-                      }
-                    : image;
+
+                /*
+                 * Merge onto the existing image rather than rebuilding it.
+                 *
+                 * This used to return a fresh object containing only id, url,
+                 * alt and customLink, which silently dropped `caption` and
+                 * `sizes`. Because the effect below writes the result straight
+                 * back with setAttributes, simply opening and saving a post was
+                 * enough to lose every caption — save.js then rendered the
+                 * literal string "No Caption Available" under each logo.
+                 *
+                 * The REST field is `alcb_custom_link`; it was previously read
+                 * as `gtvb_custom_link`, which is a field this plugin never
+                 * registers. That always resolved to '', which is what kept the
+                 * data loss above mostly dormant — so the two fixes have to
+                 * land together or fixing the field name would trigger it.
+                 */
+                return media ? { ...image, customLink: media.alcb_custom_link || '' } : image;
             });
         },
         [images]
@@ -205,10 +231,13 @@ export default function Edit(props) {
     // Update attributes when custom links are fetched
     useEffect(() => {
         if (mediaData && mediaData.length > 0) {
-            // Check if any custom links have changed
+            // Check if any custom links have changed. Images saved before the
+            // link feature existed have no `customLink` key at all, so compare
+            // against '' rather than undefined — otherwise every such post is
+            // marked dirty the moment it is opened.
             const hasChanges = mediaData.some((newImage, index) => {
                 const oldImage = images[index];
-                return oldImage && oldImage.customLink !== newImage.customLink;
+                return oldImage && (oldImage.customLink || '') !== (newImage.customLink || '');
             });
 
             // Only update if there are actual changes to avoid infinite loops
@@ -232,7 +261,9 @@ export default function Edit(props) {
                                     alt: item.alt,
                                     caption: item.caption,
                                     sizes: item?.sizes,
-                                    customLink: item.gtvb_custom_link || ''
+                                    // Registered in plugin.php as the REST field
+                                    // `alcb_custom_link` (meta `_alcb_custom_link`).
+                                    customLink: item.alcb_custom_link || ''
                                 }));
 
                                 setAttributes({ images: formattedImages });
@@ -248,8 +279,8 @@ export default function Edit(props) {
                                     onClick={open}
                                 >
                                     {images && images.length > 0
-                                        ? __('Change Logos', 'gutenbergnative-blocks')
-                                        : __('Add Logos', 'gutenbergnative-blocks')}
+                                        ? __('Change Logos', 'awesome-logo-carousel-block')
+                                        : __('Add Logos', 'awesome-logo-carousel-block')}
                                 </ToolbarButton>
                             )}
                         />
@@ -267,24 +298,19 @@ export default function Edit(props) {
                 })}
             >
                 {patternMode && (!images || images.length === 0) && (
-                    <Placeholder icon="wordpress-alt" label={__('Awesome Logo Carousel', 'awesome-logo-carousel-block')}>
-                        <button
-                            className="alcb__skip-btn"
-                            onClick={() => {
-                                setAttributes({ patternMode: false, openModal: false });
-                            }}
-                        >
-                            {__('Skip', 'awesome-logo-carousel-block')}
-                        </button>
-                        <button
-                            className="alcb__use-pattern-btn"
-                            onClick={() => {
-                                setAttributes({ openModal: true });
-                            }}
-                        >
-                            <span className="text">{__('Use Pattern', 'awesome-logo-carousel-block')}</span>
-                        </button>
-                    </Placeholder>
+                    <BlockPlaceholder
+                        icon={blockIcon}
+                        title={__('Logo Carousel', 'awesome-logo-carousel-block')}
+                        description={__(
+                            'Showcase client and partner logos in a sliding carousel. Start from a ready-made layout, or add your own logos straight away.',
+                            'awesome-logo-carousel-block'
+                        )}
+                        primaryLabel={__('Choose a pattern', 'awesome-logo-carousel-block')}
+                        onPrimary={() => setAttributes({ openModal: true })}
+                        secondaryLabel={__('Add logos manually', 'awesome-logo-carousel-block')}
+                        onSecondary={() => setAttributes({ patternMode: false, openModal: false })}
+                        footnote={__('You can change the layout and styling at any time.', 'awesome-logo-carousel-block')}
+                    />
                 )}
 
                 {!patternMode && (!images || images.length === 0) && (

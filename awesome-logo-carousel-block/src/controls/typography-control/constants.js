@@ -1,21 +1,21 @@
 import { __ } from '@wordpress/i18n';
 
 export const fontWeightOptions = [
-    { label: __('Default', 'afftra-blocks'), value: '' },
-    { label: __('100', 'afftra-blocks'), value: '100' },
-    { label: __('200', 'afftra-blocks'), value: '200' },
-    { label: __('300', 'afftra-blocks'), value: '300' },
-    { label: __('400', 'afftra-blocks'), value: '400' },
-    { label: __('500', 'afftra-blocks'), value: '500' },
-    { label: __('600', 'afftra-blocks'), value: '600' },
-    { label: __('700', 'afftra-blocks'), value: '700' },
-    { label: __('800', 'afftra-blocks'), value: '800' },
-    { label: __('900', 'afftra-blocks'), value: '900' }
+    { label: __('Default', 'awesome-logo-carousel-block'), value: '' },
+    { label: __('100', 'awesome-logo-carousel-block'), value: '100' },
+    { label: __('200', 'awesome-logo-carousel-block'), value: '200' },
+    { label: __('300', 'awesome-logo-carousel-block'), value: '300' },
+    { label: __('400', 'awesome-logo-carousel-block'), value: '400' },
+    { label: __('500', 'awesome-logo-carousel-block'), value: '500' },
+    { label: __('600', 'awesome-logo-carousel-block'), value: '600' },
+    { label: __('700', 'awesome-logo-carousel-block'), value: '700' },
+    { label: __('800', 'awesome-logo-carousel-block'), value: '800' },
+    { label: __('900', 'awesome-logo-carousel-block'), value: '900' }
 ];
 
 export const textTransformOptions = [
     {
-        label: __('None', 'afftra-blocks'),
+        label: __('None', 'awesome-logo-carousel-block'),
         value: 'none',
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -24,7 +24,7 @@ export const textTransformOptions = [
         )
     },
     {
-        label: __('Aa', 'afftra-blocks'),
+        label: __('Aa', 'awesome-logo-carousel-block'),
         value: 'capitalize',
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -33,7 +33,7 @@ export const textTransformOptions = [
         )
     },
     {
-        label: __('AA', 'afftra-blocks'),
+        label: __('AA', 'awesome-logo-carousel-block'),
         value: 'uppercase',
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -42,7 +42,7 @@ export const textTransformOptions = [
         )
     },
     {
-        label: __('aa', 'afftra-blocks'),
+        label: __('aa', 'awesome-logo-carousel-block'),
         value: 'lowercase',
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -54,7 +54,7 @@ export const textTransformOptions = [
 
 export const textDecorationOptions = [
     {
-        label: __('Normal', 'afftra-blocks'),
+        label: __('Normal', 'awesome-logo-carousel-block'),
         value: 'none',
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -63,7 +63,7 @@ export const textDecorationOptions = [
         )
     },
     {
-        label: __('Underline', 'afftra-blocks'),
+        label: __('Underline', 'awesome-logo-carousel-block'),
         value: 'underline',
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -72,7 +72,7 @@ export const textDecorationOptions = [
         )
     },
     {
-        label: __('Line Through', 'afftra-blocks'),
+        label: __('Line Through', 'awesome-logo-carousel-block'),
         value: 'line-through',
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -84,7 +84,7 @@ export const textDecorationOptions = [
 
 export const fontStyleOptions = [
     {
-        label: __('Normal', 'afftra-blocks'),
+        label: __('Normal', 'awesome-logo-carousel-block'),
         value: 'normal',
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -93,7 +93,7 @@ export const fontStyleOptions = [
         )
     },
     {
-        label: __('Italic', 'afftra-blocks'),
+        label: __('Italic', 'awesome-logo-carousel-block'),
         value: 'italic',
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -102,7 +102,7 @@ export const fontStyleOptions = [
         )
     },
     {
-        label: __('Oblique', 'afftra-blocks'),
+        label: __('Oblique', 'awesome-logo-carousel-block'),
         value: 'oblique',
         icon: (
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">

@@ -5,7 +5,7 @@ const {
     generateResRangeAttributes,
     generateTypographyAttributes,
     generateAlignmentAttributes
-} = window?.alcbModules;
+} = window?.alcbModules || {};
 
 import {
     ALIGN,

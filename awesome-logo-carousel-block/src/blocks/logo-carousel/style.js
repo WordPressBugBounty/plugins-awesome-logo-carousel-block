@@ -1,6 +1,6 @@
 import { useEffect } from '@wordpress/element';
-const { generateBgStyles, generateResBoxStyles, generateBorderStyles, generateRangeStyles } = window?.alcbModules;
-const { softMinifyCssStrings, styleGenerator } = window?.alcbModules?.Helpers;
+const { generateBgStyles, generateResBoxStyles, generateBorderStyles, generateRangeStyles } = window?.alcbModules || {};
+const { softMinifyCssStrings, styleGenerator } = window?.alcbModules?.Helpers || {};
 
 import {
     ACTIVE_PAGI_HEIGHT,

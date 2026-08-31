@@ -3,7 +3,19 @@ import { RawHTML, useEffect, useMemo, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { FixedSizeGrid as Grid } from 'react-window';
 
-import icons from './icons.json';
+/*
+ * icons.json is ~3.8 MB.
+ *
+ * It used to be imported statically here, which put it inside the
+ * `modules/index` bundle — and that bundle is enqueued on EVERY block editor
+ * screen across the whole site, whether or not a logo block is present, for a
+ * picker that no free panel even surfaces. Loading it on demand lets webpack
+ * split it into its own chunk that is fetched only when the modal is opened.
+ *
+ * The IconPicker export is unchanged so Pro can keep reaching it through
+ * window.alcbModules.
+ */
+const loadIcons = () => import(/* webpackChunkName: "alcb-icons" */ './icons.json');
 
 const iconCategories = [
     {
@@ -92,13 +104,37 @@ const IconPicker = ({ iconsPanel = false, setIconsPanel, value, onChange }) => {
     const [category, setCategory] = useState('all');
     const [filterIcons, setFilterIcons] = useState([]);
     const [searchText, setSearchText] = useState('');
+    const [icons, setIcons] = useState(null);
+
+    // Fetch the icon set the first time the modal is actually opened.
+    useEffect(() => {
+        if (!iconsPanel || icons) {
+            return;
+        }
+
+        let cancelled = false;
+
+        loadIcons().then(loaded => {
+            if (!cancelled) {
+                setIcons(loaded.default || loaded);
+            }
+        });
+
+        return () => {
+            cancelled = true;
+        };
+    }, [iconsPanel, icons]);
 
     const allSvgItems = useMemo(() => {
+        if (!icons) {
+            return [];
+        }
+
         return Object.keys(icons).map(key => ({
             label: icons[key].label,
             svg: icons[key].svg
         }));
-    }, []);
+    }, [icons]);
 
     const solidCategory = useMemo(() => allSvgItems.filter(item => item.svg.solid), [allSvgItems]);
     const brandCategory = useMemo(() => allSvgItems.filter(item => item.svg.brands), [allSvgItems]);
@@ -175,6 +211,9 @@ const IconPicker = ({ iconsPanel = false, setIconsPanel, value, onChange }) => {
                                 />
                             </div>
                             <div className="alcb-icons-wrap">
+                                {!icons && (
+                                    <div className="svgib__icons-loading">{__('Loading icons…', 'awesome-logo-carousel-block')}</div>
+                                )}
                                 <div className="svgib__icons-container">
                                     <Grid
                                         columnCount={9}

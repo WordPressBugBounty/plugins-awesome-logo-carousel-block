@@ -1,5 +1,5 @@
 const { generateBackgroundAttributes, generateResBoxControlAttributes, generateBorderAttributes, generateResRangeAttributes } =
-    window?.alcbModules;
+    window?.alcbModules || {};
 
 import {
     ACTIVE_PAGI_HEIGHT,
@@ -92,10 +92,6 @@ const attributes = {
         type: 'boolean',
         default: true
     },
-    itemDevice: {
-        type: 'string',
-        default: 'desktop'
-    },
     deskItemsPerView: {
         type: 'number',
         default: 4
@@ -116,10 +112,6 @@ const attributes = {
     },
     phoneRows: {
         type: 'number'
-    },
-    spaceDevice: {
-        type: 'string',
-        default: 'desktop'
     },
     deskSpace: {
         type: 'number',

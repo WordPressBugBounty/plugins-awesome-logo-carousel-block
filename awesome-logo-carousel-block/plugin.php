@@ -5,7 +5,7 @@
  * Description:       Showcase brand logos in interactive grid, carousel, slider, ticker, and list view.
  * Requires at least: 6.0
  * Requires PHP:      7.4
- * Version:           2.2.4
+ * Version:           2.3.0
  * Author:            Gutenbergkits Team
  * Author URI:        https://gutenbergkits.com
  * License:           GPL-2.0-or-later
@@ -33,7 +33,7 @@ final class Alcb_Plugin {
 	 *
 	 * @var string
 	 */
-	const VERSION = '2.2.4';
+	const VERSION = '2.3.0';
 
 	/**
 	 * Instance
@@ -128,7 +128,9 @@ final class Alcb_Plugin {
 	 */
 	public function save_custom_link_field( $post, $attachment ) {
 		if ( isset( $attachment['alcb_custom_link'] ) ) {
-			update_post_meta( $post['ID'], '_alcb_custom_link', sanitize_text_field( $attachment['alcb_custom_link'] ) );
+			// This value is rendered into an href, so it needs URL escaping
+			// rather than plain text sanitisation.
+			update_post_meta( $post['ID'], '_alcb_custom_link', esc_url_raw( $attachment['alcb_custom_link'] ) );
 		}
 		return $post;
 	}
@@ -147,7 +149,8 @@ final class Alcb_Plugin {
 					return get_post_meta( $object['id'], '_alcb_custom_link', true );
 				},
 				'update_callback' => function( $value, $object ) {
-					return update_post_meta( $object['id'], '_alcb_custom_link', sanitize_text_field( $value ) );
+						// Rendered into an href — escape as a URL, not as text.
+						return update_post_meta( $object['id'], '_alcb_custom_link', esc_url_raw( $value ) );
 				},
 				'schema'          => [
 					'description' => __( 'Custom link for the image', 'awesome-logo-carousel-block' ),

@@ -10,12 +10,13 @@ import { ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { useDispatch, useSelect } from '@wordpress/data';
 import { Fragment, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { Placeholder } from '@wordpress/components';
 import PatternsModal from '../pattern';
+import BlockPlaceholder from '../../controls/block-placeholder';
+import blockIcon from './icon';
 import classnames from 'classnames';
 
-const { handleUniqueId } = window.alcbModules.Helpers;
-const { DynamicTag } = window?.alcbModules;
+const { handleUniqueId } = window?.alcbModules?.Helpers || {};
+const { DynamicTag } = window?.alcbModules || {};
 
 // editor style
 import './editor.scss';
@@ -33,6 +34,8 @@ export default function Edit(props) {
 
     // Get current inner blocks
     const currentInnerBlocks = useSelect(select => select('core/block-editor').getBlocks(clientId), [clientId]);
+
+    const isEmpty = (!images || images.length === 0) && currentInnerBlocks.length === 0;
 
     // Block ID
     useEffect(() => {
@@ -131,28 +134,30 @@ export default function Edit(props) {
                     })
                 })}
             >
-                {patternMode && (!images || images.length === 0) && (
-                    <Placeholder icon="wordpress-alt" label={__('Awesome Logo Carousel', 'awesome-logo-carousel-block')}>
-                        <button
-                            className="alcb__skip-btn"
-                            onClick={() => {
-                                setAttributes({ patternMode: false, openModal: false });
-                            }}
-                        >
-                            {__('Skip', 'awesome-logo-carousel-block')}
-                        </button>
-                        <button
-                            className="alcb__use-pattern-btn"
-                            onClick={() => {
-                                setAttributes({ openModal: true });
-                            }}
-                        >
-                            <span className="text">{__('Use Pattern', 'awesome-logo-carousel-block')}</span>
-                        </button>
-                    </Placeholder>
+                {/*
+                  * `isEmpty` also checks inner blocks, not just `images`. A grid
+                  * that already holds lcb/logo children but has no `images`
+                  * attribute — which is what a hand-authored or pattern-inserted
+                  * grid looks like — would otherwise render the empty-state
+                  * placeholder on top of real content.
+                  */}
+                {patternMode && isEmpty && (
+                    <BlockPlaceholder
+                        icon={blockIcon}
+                        title={__('Logo Grid', 'awesome-logo-carousel-block')}
+                        description={__(
+                            'Display client and partner logos in a responsive grid. Start from a ready-made layout, or add your own logos straight away.',
+                            'awesome-logo-carousel-block'
+                        )}
+                        primaryLabel={__('Choose a pattern', 'awesome-logo-carousel-block')}
+                        onPrimary={() => setAttributes({ openModal: true })}
+                        secondaryLabel={__('Add logos manually', 'awesome-logo-carousel-block')}
+                        onSecondary={() => setAttributes({ patternMode: false, openModal: false })}
+                        footnote={__('You can change the layout and styling at any time.', 'awesome-logo-carousel-block')}
+                    />
                 )}
 
-                {!patternMode && (!images || images.length === 0) && (
+                {!patternMode && isEmpty && (
                     <MediaPlaceholder
                         onSelect={v => {
                             setAttributes({ images: v });

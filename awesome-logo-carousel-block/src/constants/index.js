@@ -400,3 +400,7 @@ export const taSvgib = {
     p: 'p',
     span: 'span'
 };
+
+// Responsive breakpoints, re-exported so editor code can reach them from the
+// shared constants barrel. Frontend code imports ./breakpoints directly.
+export { BREAKPOINTS } from './breakpoints';

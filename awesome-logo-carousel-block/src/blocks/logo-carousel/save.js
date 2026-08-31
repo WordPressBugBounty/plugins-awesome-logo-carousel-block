@@ -5,7 +5,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
 import classnames from 'classnames';
-const { DynamicTag } = window?.alcbModules;
+const { DynamicTag } = window?.alcbModules || {};
 
 export default function Save({ attributes }) {
     const {

@@ -37,7 +37,8 @@
 
     .alcb-editor-icon {
         &.bg-btn {
-            box-shadow: inset 0 0 0 1px #e0e0e0;
+            box-shadow: none !important;
+            border-color: #e0e0e0 !important;
             &.active {
                 background: #eeeeee;
             }

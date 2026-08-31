@@ -69,11 +69,13 @@ class Alcb_Init {
 		require_once ALCB_INC . 'classes/register.php';
 		require_once ALCB_INC . 'classes/enqueue.php';
 		require_once ALCB_INC . 'classes/style.php';
+		require_once ALCB_INC . 'classes/frontend.php';
 		require_once ALCB_INC . 'classes/Patterns.php';
 
 		Alcb_Register_Blocks::get_instance();
 		Alcb_Enqueue::get_instance();
 		Alcb_Style::get_instance();
+		Alcb_Frontend::get_instance();
 		Alcb_Patterns::instance();
 	}
 

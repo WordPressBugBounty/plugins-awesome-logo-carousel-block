@@ -22,6 +22,18 @@ export { default as SwitcherControl } from '../controls/switcher-control';
 export { default as TypographyControl } from '../controls/typography-control';
 export { default as UploadBtn } from '../controls/upload-btn';
 
+/**
+ * Shared editor UI.
+ *
+ * Exposed on window.alcbModules so the Pro plugin's blocks can present the
+ * same empty state and pattern picker as the free ones instead of
+ * reimplementing them. PatternsModal is generic: it replaces whichever block
+ * opened it via its clientId, so it works for any lcb/* block that declares
+ * `patternMode` and `openModal` attributes.
+ */
+export { default as BlockPlaceholder } from '../controls/block-placeholder';
+export { default as PatternsModal } from '../blocks/pattern';
+
 // Global Style Handler
 export { default as GlobalStyleHandler } from '../style-generator';
 

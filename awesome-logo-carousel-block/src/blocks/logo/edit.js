@@ -4,8 +4,8 @@ import { MediaPlaceholder, RichText, useBlockProps } from '@wordpress/block-edit
 import { Fragment, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
-const { handleUniqueId } = window.alcbModules.Helpers;
-const { DynamicTag } = window?.alcbModules;
+const { handleUniqueId } = window?.alcbModules?.Helpers || {};
+const { DynamicTag } = window?.alcbModules || {};
 
 // editor style
 import Inspect from './inspect';

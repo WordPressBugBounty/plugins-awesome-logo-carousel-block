@@ -8,7 +8,8 @@
     .switcher-button {
         width: 100%;
         justify-content: center;
-        box-shadow: inset 0 0 0 1px #e0e0e0 !important;
+        box-shadow: none !important;
+        border-color: #e0e0e0 !important;
         &.alcb-active {
             background-color: #eeeeee;
         }

@@ -171,33 +171,6 @@ button.alcb-patterns-refresh-btn {
     gap: 15px;
 }
 
-// Placeholder styles
-.alcb__use-pattern-btn {
-    background: #38a083;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    margin-left: 10px;
-    &:hover {
-        background: #2d8069;
-    }
-}
-
-.alcb__skip-btn {
-    background: #f0f0f0;
-    color: #333;
-    border: 1px solid #ccc;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    &:hover {
-        background: #e0e0e0;
-    }
-}
 
 .alcb-patterns-load-more-wrapper {
     display: flex;

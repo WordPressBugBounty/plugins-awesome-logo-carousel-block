@@ -1,0 +1,69 @@
+{
+    "blockStyle": {
+        "type": "object"
+    },
+    "caption": {
+        "type": "string"
+    },
+    "captionVisibility": {
+        "type": "boolean",
+        "default": false
+    },
+    "contentPosition": {
+        "type": "string",
+        "default": ""
+    },
+    "contentVisiblity": {
+        "type": "string",
+        "default": "cv_always"
+    },
+    "description": {
+        "type": "string"
+    },
+    "enableLink": {
+        "type": "boolean",
+        "default": false
+    },
+    "hoverEffect": {
+        "type": "string",
+        "default": ""
+    },
+    "hoverOverlay": {
+        "type": "string",
+        "default": "auto"
+    },
+    "link": {
+        "type": "object",
+        "default": {
+            "url": "",
+            "openInNewTab": false
+        }
+    },
+    "logoHoverStyle": {
+        "type": "string",
+        "default": ""
+    },
+    "photo": {
+        "type": "object",
+        "default": {}
+    },
+    "preview": {
+        "type": "boolean",
+        "default": false
+    },
+    "resMode": {
+        "type": "string",
+        "default": "Desktop"
+    },
+    "showDesc": {
+        "type": "boolean",
+        "default": false
+    },
+    "sliderId": {
+        "type": "string"
+    },
+    "visibleContentPosition": {
+        "type": "string",
+        "default": ""
+    }
+}

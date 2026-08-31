@@ -22,7 +22,7 @@
 
     "keywords": ["logo", "carousel", "logo carousel", "logo slider"],
     "textdomain": "awesome-logo-carousel-block",
-    "editorScript": ["file:./index.js", "alcb-global"],
+    "editorScript": ["file:./index.js", "alcb-modules", "alcb-global"],
     "editorStyle": ["file:./index.css", "alcb-global-style"],
     "style": ["file:./style-index.css"]
 }

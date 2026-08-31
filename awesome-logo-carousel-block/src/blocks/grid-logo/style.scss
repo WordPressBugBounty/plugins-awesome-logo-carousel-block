@@ -38,3 +38,23 @@
         }
     }
 }
+
+/**
+ * Respect a reduced-motion preference for the hover effects above.
+ */
+@media (prefers-reduced-motion: reduce) {
+    .wp-block-lcb-grid-logo,
+    .wp-block-lcb-logo {
+        *,
+        *::before,
+        *::after {
+            transition: none !important;
+            animation: none !important;
+        }
+
+        .logo-img img,
+        .image-item img {
+            transform: none !important;
+        }
+    }
+}

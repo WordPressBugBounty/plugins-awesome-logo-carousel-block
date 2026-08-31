@@ -44,7 +44,7 @@ const {
     ProControl,
     ProWrapper,
     AlignmentControl
-} = window?.alcbModules;
+} = window?.alcbModules || {};
 
 const Inspect = ({ attributes, setAttributes }) => {
     const {

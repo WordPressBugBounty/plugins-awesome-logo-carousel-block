@@ -168,3 +168,82 @@
         }
     }
 }
+
+/**
+ * Autoplay play/pause control.
+ *
+ * Injected by view.js at runtime rather than emitted from save.js, so that
+ * existing content gains it without a re-save and no stored markup changes.
+ * WCAG 2.2.2 requires a way to stop motion that starts automatically; autoplay
+ * is on by default here and resumes after interaction, and hover-pause does
+ * nothing for keyboard or touch users.
+ */
+.wp-block-lcb-logo-carousel {
+    position: relative;
+
+    .alcb__autoplay-toggle {
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        z-index: 5;
+        width: 28px;
+        height: 28px;
+        padding: 0;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.85);
+        cursor: pointer;
+        // Visible but unobtrusive until focused or hovered.
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+
+        &::before {
+            content: '';
+            display: block;
+            margin: 0 auto;
+            width: 8px;
+            height: 10px;
+            background: currentColor;
+            // Two bars: the pause glyph.
+            clip-path: polygon(0 0, 3px 0, 3px 100%, 0 100%, 5px 0, 8px 0, 8px 100%, 5px 100%);
+        }
+
+        &[data-state='paused']::before {
+            // A triangle: the play glyph.
+            clip-path: polygon(0 0, 100% 50%, 0 100%);
+        }
+
+        &:hover,
+        &:focus-visible {
+            opacity: 1;
+        }
+    }
+
+    &:hover .alcb__autoplay-toggle,
+    &:focus-within .alcb__autoplay-toggle {
+        opacity: 1;
+    }
+}
+
+/**
+ * Respect a reduced-motion preference.
+ *
+ * view.js additionally refuses to start autoplay at all when this is set; this
+ * covers the hover and caption transitions that are pure CSS.
+ */
+@media (prefers-reduced-motion: reduce) {
+    .wp-block-lcb-logo-carousel {
+        .alcb__logo-caption,
+        .alcb__logo-image img,
+        .swiper-button-next,
+        .swiper-button-prev,
+        .alcb__autoplay-toggle {
+            transition: none !important;
+            animation: none !important;
+        }
+
+        .alcb__logo-image img {
+            transform: none !important;
+        }
+    }
+}

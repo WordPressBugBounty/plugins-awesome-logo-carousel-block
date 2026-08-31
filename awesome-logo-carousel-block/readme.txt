@@ -2,8 +2,8 @@
 Contributors: Binsaifullah
 Tags: logo carousel, logo slider, image carousel, carousel block, slider block
 Requires at least: 6.0
-Tested up to: 6.9
-Stable tag: 2.2.4
+Tested up to: 7.1
+Stable tag: 2.3.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -92,6 +92,23 @@ Yes! The pro version includes additional features and customization options. You
 
 == Changelog ==
 
+= 2.3.0 =
+* Fixed: Logo captions could be silently removed when a post was opened and re-saved
+* Fixed: "Logo Based" media links never resolved, so per-image links did nothing
+* Fixed: Setting a background image on a logo discarded every other style for that block
+* Fixed: Mobile row count was ignored in the editor preview
+* Fixed: Editor preview and frontend used different responsive breakpoints
+* Fixed: Pro users were still shown the "Upgrade to Pro" notice on the Logo block
+* Added: Accessible carousel — labelled region, keyboard-reachable arrows, and an autoplay pause control
+* Added: Respect for the "reduced motion" system preference
+* Added: Lazy loading, async decoding and intrinsic dimensions on logo images, reducing layout shift
+* Added: Block deprecations, so future updates cannot invalidate existing content
+* Improved: Editor assets are around 95% smaller — the icon library now loads only when opened
+* Improved: Carousels initialise only when scrolled into view
+* Improved: Redesigned the placeholder shown when a logo block is first inserted
+* Improved: Around 300 interface strings are now translatable
+* Improved: Removed unused code and dependencies
+
 = 2.2.4 =
 * Added: Pattern Library
 
@@ -151,3 +168,8 @@ Yes! The pro version includes additional features and customization options. You
 * Added: Padding and background for logo 
 * Improved: Code quality, UI 
 * Fixed: Minor bugs
+
+== Upgrade Notice ==
+
+= 2.3.0 =
+Recommended for all users. Fixes a bug that could silently remove logo captions when a post was re-saved, repairs per-logo media links, and stops a background image from discarding a block's other styles. Also adds accessibility improvements and makes the editor load significantly faster. Existing blocks are unaffected by the update.

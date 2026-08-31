@@ -1,7 +1,7 @@
 import { InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextareaControl, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-const { LinkControl, ProControl } = window?.alcbModules;
+const { LinkControl, ProControl } = window?.alcbModules || {};
 
 const Inspect = ({ attributes, setAttributes }) => {
     const { showDesc, link, enableLink, captionVisibility, caption, logoHoverStyle, description } = attributes;
@@ -32,13 +32,18 @@ const Inspect = ({ attributes, setAttributes }) => {
                             />
                         )}
                     </PanelBody>
-                    <ProControl>
-                        <p>{__('Unlock more features with the Pro version.', 'awesome-logo-carousel-block')}</p>
-                        <a href="https://logocarousel.gutenbergkits.com/" target="_blank" rel="noopener noreferrer">
-                            {__('Upgrade to Pro', 'awesome-logo-carousel-block')}
-                            <span className="dashicons dashicons-external"></span>
-                        </a>
-                    </ProControl>
+                    {/* Was rendered unconditionally, so paying customers were
+                        shown "Upgrade to Pro" on every logo block. Matches the
+                        guard already used by grid-logo and logo-carousel. */}
+                    {window.alcbData?.hasPro !== '1' && (
+                        <ProControl>
+                            <p>{__('Unlock more features with the Pro version.', 'awesome-logo-carousel-block')}</p>
+                            <a href="https://logocarousel.gutenbergkits.com/" target="_blank" rel="noopener noreferrer">
+                                {__('Upgrade to Pro', 'awesome-logo-carousel-block')}
+                                <span className="dashicons dashicons-external"></span>
+                            </a>
+                        </ProControl>
+                    )}
                 </div>
             </InspectorControls>
         </>

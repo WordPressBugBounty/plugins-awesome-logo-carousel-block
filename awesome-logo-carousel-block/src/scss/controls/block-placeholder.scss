@@ -1,0 +1,114 @@
+/**
+ * Empty state for a freshly inserted logo block.
+ */
+
+$alcb-brand: #38a083;
+$alcb-brand-dark: #2d8069;
+$alcb-brand-darker: #256b58;
+
+.alcb-placeholder {
+    /*
+     * Re-scope the admin theme variable instead of overriding button colours by
+     * hand. Core's Button reads this for its background, hover, active and
+     * focus ring, so the brand colour applies consistently and every
+     * interaction state keeps core's behaviour.
+     */
+    --wp-admin-theme-color: #{$alcb-brand};
+    --wp-admin-theme-color-darker-10: #{$alcb-brand-dark};
+    --wp-admin-theme-color-darker-20: #{$alcb-brand-darker};
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 48px 24px;
+    border: 1px dashed #d5d8dd;
+    border-radius: 8px;
+    background:
+        linear-gradient(180deg, rgba($alcb-brand, 0.035) 0%, rgba($alcb-brand, 0) 55%),
+        #fdfdfe;
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+        height: 52px;
+        margin-bottom: 18px;
+        border-radius: 12px;
+        color: $alcb-brand;
+        background: rgba($alcb-brand, 0.1);
+        box-shadow: inset 0 0 0 1px rgba($alcb-brand, 0.14);
+
+        svg {
+            width: 26px;
+            height: 26px;
+        }
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.4;
+        color: #1e1e1e;
+    }
+
+    &__description {
+        // Held well short of the block width so the line length stays readable
+        // even when the block is full-width.
+        max-width: 380px;
+        margin-top: 6px;
+        font-size: 13px;
+        line-height: 1.6;
+        color: #6b7280;
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 22px;
+
+        .components-button {
+            height: 40px;
+            padding: 0 20px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        // Give the secondary action a solid surface: the placeholder sits on a
+        // tinted background, and core's ghost secondary reads as disabled here.
+        .components-button.is-secondary {
+            background: #fff;
+        }
+    }
+
+    &__footnote {
+        margin-top: 14px;
+        font-size: 12px;
+        color: #8c8f94;
+    }
+
+    // Inside a column or a narrow container the block can get quite tight.
+    @media (max-width: 600px) {
+        padding: 32px 16px;
+
+        &__actions {
+            width: 100%;
+            flex-direction: column;
+
+            .components-button {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .alcb-placeholder .components-button {
+        transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+    }
+}

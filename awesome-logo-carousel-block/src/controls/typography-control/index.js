@@ -73,7 +73,7 @@ const TypographyControl = ({ label, controlName, objAttrs, instanceId }) => {
                                 <FlexBlock>
                                     <ResLabelControl
                                         id="font-size-control"
-                                        label={__('Font Size', 'alcb-blocks')}
+                                        label={__('Font Size', 'awesome-logo-carousel-block')}
                                         requiredProps={{
                                             resMode,
                                             setAttributes,
@@ -232,7 +232,7 @@ const TypographyControl = ({ label, controlName, objAttrs, instanceId }) => {
                             <div className="alcb-flex">
                                 <div className="alcb-flex-item">
                                     <label htmlFor="text-transform-control" className="alcb-label alcb-mb-8 alcb-inline-block">
-                                        {__('Decoration', 'alcb-blocks')}
+                                        {__('Decoration', 'awesome-logo-carousel-block')}
                                     </label>
                                     <ButtonGroup
                                         id="text-transform-control"
@@ -262,7 +262,7 @@ const TypographyControl = ({ label, controlName, objAttrs, instanceId }) => {
                                 </div>
                                 <div className="alcb-flex-item">
                                     <label htmlFor="text-transform-control" className="alcb-label alcb-mb-8 alcb-inline-block">
-                                        {__('Transform', 'alcb-blocks')}
+                                        {__('Transform', 'awesome-logo-carousel-block')}
                                     </label>
                                     <ButtonGroup
                                         id="text-transform-control"
@@ -296,7 +296,7 @@ const TypographyControl = ({ label, controlName, objAttrs, instanceId }) => {
                             <Flex>
                                 <FlexBlock>
                                     <label htmlFor="font-style-control" className="alcb-label">
-                                        {__('Style', 'alcb-blocks')}
+                                        {__('Style', 'awesome-logo-carousel-block')}
                                     </label>
                                 </FlexBlock>
                                 <FlexItem>
@@ -330,7 +330,7 @@ const TypographyControl = ({ label, controlName, objAttrs, instanceId }) => {
                                 <FlexBlock>
                                     <ResLabelControl
                                         id="line-height-control"
-                                        label={__('Line Height', 'alcb-blocks')}
+                                        label={__('Line Height', 'awesome-logo-carousel-block')}
                                         requiredProps={{
                                             resMode,
                                             setAttributes,
@@ -493,7 +493,7 @@ const TypographyControl = ({ label, controlName, objAttrs, instanceId }) => {
                                 <FlexBlock>
                                     <ResLabelControl
                                         id="letter-spacing-control"
-                                        label={__('Letter Spacing', 'alcb-blocks')}
+                                        label={__('Letter Spacing', 'awesome-logo-carousel-block')}
                                         requiredProps={{
                                             resMode,
                                             setAttributes,

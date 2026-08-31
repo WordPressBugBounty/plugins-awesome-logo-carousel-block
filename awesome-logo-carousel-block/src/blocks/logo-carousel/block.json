@@ -11,7 +11,7 @@
     },
     "keywords": ["logo", "carousel", "logo carousel", "logo slider"],
     "textdomain": "awesome-logo-carousel-block",
-    "editorScript": ["file:./index.js", "alcb-swiper", "alcb-global"],
+    "editorScript": ["file:./index.js", "alcb-modules", "alcb-swiper", "alcb-global"],
     "editorStyle": ["file:./index.css", "alcb-swiper", "alcb-global-style"],
     "style": ["file:./style-index.css", "alcb-swiper"],
     "viewScript": ["file:./view.js", "alcb-swiper"]
